@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.6.4)
+  - R.swift (7.2.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - R.swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - R.swift
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  R.swift: 681bb9135f482e7a81d9d27445b837fef5467e11
+
+PODFILE CHECKSUM: 0cecc8486a2b525b4bd140aa6abed13d32ffd893
+
+COCOAPODS: 1.12.0
