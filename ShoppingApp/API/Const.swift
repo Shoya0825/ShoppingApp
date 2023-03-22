@@ -9,7 +9,7 @@
 public struct Const {
     
     struct zipCodeSearchApi {
-        static let baseUrl = "https://zipcloud.ibsnet.co.jp/api/"
+        static let baseUrl = "https://zipcloud.ibsnet.co.jp/api/search"
     }
     
     

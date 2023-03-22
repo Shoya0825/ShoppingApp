@@ -89,6 +89,9 @@
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTappedOKButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="itY-ll-2jN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -123,10 +126,10 @@
     </scenes>
     <designables>
         <designable name="GwR-71-CM0">
-            <size key="intrinsicContentSize" width="128.66666666666666" height="25.666666666666668"/>
+            <size key="intrinsicContentSize" width="138.66666666666666" height="25.666666666666668"/>
         </designable>
         <designable name="Rrf-HR-M2E">
-            <size key="intrinsicContentSize" width="118.33333333333333" height="25.666666666666668"/>
+            <size key="intrinsicContentSize" width="128.33333333333334" height="25.666666666666668"/>
         </designable>
     </designables>
     <resources>

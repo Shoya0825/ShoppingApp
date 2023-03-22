@@ -7,6 +7,7 @@
 
 struct AddressModel: Decodable {
     var results: [Result]
+    var message: String
 
         struct Result: Decodable {
             var address1: String

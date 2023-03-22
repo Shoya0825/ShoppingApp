@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,6 +16,9 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var okButton: UIButton!
     var activeTextField: UITextField?
+    
+    let addressRequest = AddressRequest()
+    private var addresses: AddressModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +59,12 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
             UIView.animate(withDuration: 0.1, animations: {
                 self.view.frame.origin.y = 0
             })
+        }
+    }
+    
+    @IBAction func didTappedOKButton(_ sender: Any) {
+        addressRequest.requestAddress(zipCode: zipCodeTextField.text!) { result, error in
+
         }
     }
     

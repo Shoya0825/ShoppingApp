@@ -29,6 +29,7 @@
 		E8BD44E529B9C8A500BF0D25 /* RegistrationName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BD44E429B9C8A500BF0D25 /* RegistrationName.storyboard */; };
 		E8BD44E729B9C8B500BF0D25 /* RegistrationNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */; };
 		E8BD44EA29B9CCC600BF0D25 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E929B9CCC600BF0D25 /* R.generated.swift */; };
+		E8C3D80B29CA9EF900BD5EE4 /* AddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		E8BD44E429B9C8A500BF0D25 /* RegistrationName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationName.storyboard; sourceTree = "<group>"; };
 		E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNameViewController.swift; sourceTree = "<group>"; };
 		E8BD44E929B9CCC600BF0D25 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				E88C464329C84B1500EE9084 /* Const.swift */,
+				E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				E8BD44CF29B9BE5800BF0D25 /* AppDelegate.swift in Sources */,
 				E80924D729C4085A00A7BFED /* UIView+Extension.swift in Sources */,
 				E81B6D0129BB17ED008AB17F /* UserMyPageViewController.swift in Sources */,
+				E8C3D80B29CA9EF900BD5EE4 /* AddressRequest.swift in Sources */,
 				E8BD44EA29B9CCC600BF0D25 /* R.generated.swift in Sources */,
 				E88C464729C8552B00EE9084 /* AddressModel.swift in Sources */,
 				E88C464429C84B1500EE9084 /* Const.swift in Sources */,
