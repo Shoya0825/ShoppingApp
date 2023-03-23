@@ -6,15 +6,15 @@
 //
 
 struct AddressModel: Decodable {
-    var results: [Result]
-    var message: String
+    let results: [Result]
 
-        struct Result: Decodable {
-            var address1: String
-            var address2: String
-            var address3: String
-            var kana1: String
-            var kana2: String
-            var kana3: String
-        }
+    struct Result: Decodable {
+        let address1: String
+        let address2: String
+        let address3: String
+    }
+    
+    struct Messsage: Decodable {
+        let message: String
+    }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SVProgressHUD
 
 class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
     
@@ -18,7 +19,8 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
     var activeTextField: UITextField?
     
     let addressRequest = AddressRequest()
-    private var addresses: AddressModel?
+    var addresses: AddressModel?
+    let alert = AlertController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,29 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         activeTextField = textField == addressTextField ? textField : nil
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == zipCodeTextField {
+            
+            if textField.text?.count != 7 {
+                alert.showAlert(vc: self, title: "エラー", message: "郵便番号は7桁で入力してください")
+                return
+            }
+            
+            searchZipCode()
+        }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField == zipCodeTextField {
+            
+            guard let zipCode = textField.text else { return }
+            
+            if zipCode.count > 7 {
+                textField.text = String(zipCode.prefix(7))
+            }
+        }
     }
     
     @objc func keyboardWillShown(notification: NSNotification) {
@@ -62,10 +87,35 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func didTappedOKButton(_ sender: Any) {
-        addressRequest.requestAddress(zipCode: zipCodeTextField.text!) { result, error in
-
+    func searchZipCode() {
+        SVProgressHUD.show()
+        
+        addressRequest.requestAddress(zipCode: zipCodeTextField.text!) { data, result, error in
+            SVProgressHUD.dismiss()
+            
+            if result {
+                
+                guard let addresses = data?.results[0] else {
+                    self.addressTextField.text = ""
+                    self.alert.showAlert(vc: self, title: "エラー", message: "住所が見つかりませんでした")
+        
+                    return
+                }
+                
+                let prefecture = addresses.address1
+                let city = addresses.address2
+                let town = addresses.address3
+                
+                self.prefectureLabel.text = prefecture
+                self.addressTextField.text = city + town
+                
+            } else {
+                self.alert.showAlert(vc: self, title: "エラー", message: "郵便番号を再度入力してください")
+            }
         }
+    }
+    
+    @IBAction func didTappedOKButton(_ sender: Any) {
     }
     
 }

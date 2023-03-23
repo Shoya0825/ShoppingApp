@@ -10,6 +10,7 @@ target 'ShoppingApp' do
   
   pod 'R.swift'
   pod 'Alamofire', '~> 5.2'
+  pod 'SVProgressHUD'
 
   # Pods for ShoppingApp
 

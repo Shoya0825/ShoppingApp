@@ -30,6 +30,7 @@
 		E8BD44E729B9C8B500BF0D25 /* RegistrationNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */; };
 		E8BD44EA29B9CCC600BF0D25 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E929B9CCC600BF0D25 /* R.generated.swift */; };
 		E8C3D80B29CA9EF900BD5EE4 /* AddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */; };
+		E8E33BB029CBFEC700CF1296 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E33BAF29CBFEC700CF1296 /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNameViewController.swift; sourceTree = "<group>"; };
 		E8BD44E929B9CCC600BF0D25 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRequest.swift; sourceTree = "<group>"; };
+		E8E33BAF29CBFEC700CF1296 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				E80924D629C4085A00A7BFED /* UIView+Extension.swift */,
 				E80924D829C409F700A7BFED /* UITextField+Extension.swift */,
+				E8E33BAF29CBFEC700CF1296 /* AlertController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BD44D329B9BE5800BF0D25 /* LoginViewController.swift in Sources */,
+				E8E33BB029CBFEC700CF1296 /* AlertController.swift in Sources */,
 				E8BD44CF29B9BE5800BF0D25 /* AppDelegate.swift in Sources */,
 				E80924D729C4085A00A7BFED /* UIView+Extension.swift in Sources */,
 				E81B6D0129BB17ED008AB17F /* UserMyPageViewController.swift in Sources */,
