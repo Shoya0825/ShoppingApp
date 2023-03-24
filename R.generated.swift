@@ -110,12 +110,13 @@ struct _R {
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var login: login { .init(bundle: bundle) }
     var registrationAddress: registrationAddress { .init(bundle: bundle) }
+    var registrationBirthday: registrationBirthday { .init(bundle: bundle) }
     var registrationName: registrationName { .init(bundle: bundle) }
     var userMyPage: userMyPage { .init(bundle: bundle) }
 
@@ -128,6 +129,9 @@ struct _R {
     func registrationAddress(bundle: Foundation.Bundle) -> registrationAddress {
       .init(bundle: bundle)
     }
+    func registrationBirthday(bundle: Foundation.Bundle) -> registrationBirthday {
+      .init(bundle: bundle)
+    }
     func registrationName(bundle: Foundation.Bundle) -> registrationName {
       .init(bundle: bundle)
     }
@@ -138,6 +142,7 @@ struct _R {
       try self.launchScreen.validate()
       try self.login.validate()
       try self.registrationAddress.validate()
+      try self.registrationBirthday.validate()
       try self.registrationName.validate()
       try self.userMyPage.validate()
     }
@@ -182,6 +187,22 @@ struct _R {
 
       func validate() throws {
         if registrationAddress() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'registrationAddress' could not be loaded from storyboard 'RegistrationAddress' as 'RegistrationAddressViewController'.") }
+      }
+    }
+
+    /// Storyboard `RegistrationBirthday`.
+    struct registrationBirthday: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = RegistrationBirthdayViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "RegistrationBirthday"
+
+      var registrationBirthday: RswiftResources.StoryboardViewControllerIdentifier<RegistrationBirthdayViewController> { .init(identifier: "RegistrationBirthday", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "birthday.cake") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'birthday.cake' is used in storyboard 'RegistrationBirthday', but couldn't be loaded.") } }
+        if registrationBirthday() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'registrationBirthday' could not be loaded from storyboard 'RegistrationBirthday' as 'RegistrationBirthdayViewController'.") }
       }
     }
 

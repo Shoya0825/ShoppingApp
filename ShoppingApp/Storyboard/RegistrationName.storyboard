@@ -115,7 +115,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0c-2p-vzp">
-                                        <rect key="frame" x="121.66666666666669" y="418" width="150" height="50"/>
+                                        <rect key="frame" x="121.66666666666669" y="388" width="150" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="1XR-JS-NG9"/>
                                             <constraint firstAttribute="height" constant="50" id="6A6-7E-wsN"/>
@@ -132,6 +132,14 @@
                                             <action selector="didTappedOKButton:" destination="CD7-3h-zMV" eventType="touchUpInside" id="sbO-e5-hV4"/>
                                         </connections>
                                     </button>
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="C2F-JY-Lmy">
+                                        <rect key="frame" x="20" y="458" width="353" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="geg-wu-hho"/>
+                                        </constraints>
+                                        <color key="pageIndicatorTintColor" systemColor="systemGrayColor"/>
+                                        <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor"/>
+                                    </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -140,9 +148,12 @@
                                     <constraint firstItem="xBb-pC-T5S" firstAttribute="top" secondItem="RBO-f0-kZ1" secondAttribute="bottom" constant="50" id="Svs-nj-nDJ"/>
                                     <constraint firstItem="xBb-pC-T5S" firstAttribute="centerX" secondItem="wgy-oT-vyg" secondAttribute="centerX" id="WZ1-Tc-r6u"/>
                                     <constraint firstAttribute="height" constant="600" id="Y0G-ER-Bfd"/>
+                                    <constraint firstAttribute="trailing" secondItem="C2F-JY-Lmy" secondAttribute="trailing" constant="20" id="bI1-iI-Jfw"/>
                                     <constraint firstItem="xBb-pC-T5S" firstAttribute="leading" secondItem="wgy-oT-vyg" secondAttribute="leading" constant="20" id="dOy-2Q-O50"/>
+                                    <constraint firstItem="C2F-JY-Lmy" firstAttribute="leading" secondItem="wgy-oT-vyg" secondAttribute="leading" constant="20" id="eBi-UZ-FqW"/>
                                     <constraint firstItem="RBO-f0-kZ1" firstAttribute="top" secondItem="wgy-oT-vyg" secondAttribute="top" constant="50" id="jQ7-vA-JTr"/>
-                                    <constraint firstItem="k0c-2p-vzp" firstAttribute="top" secondItem="xBb-pC-T5S" secondAttribute="bottom" constant="50" id="kCT-ou-uKW"/>
+                                    <constraint firstItem="k0c-2p-vzp" firstAttribute="top" secondItem="xBb-pC-T5S" secondAttribute="bottom" constant="20" id="kCT-ou-uKW"/>
+                                    <constraint firstItem="C2F-JY-Lmy" firstAttribute="top" secondItem="k0c-2p-vzp" secondAttribute="bottom" constant="20" id="mx4-fl-nCM"/>
                                     <constraint firstItem="RBO-f0-kZ1" firstAttribute="centerX" secondItem="wgy-oT-vyg" secondAttribute="centerX" id="zW4-Ek-T7A"/>
                                 </constraints>
                             </view>
@@ -165,21 +176,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDT-8P-Hoa" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="-35"/>
+            <point key="canvasLocation" x="35.877862595419849" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <designables>
         <designable name="Izv-zY-mUf">
-            <size key="intrinsicContentSize" width="67.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="57.333333333333336" height="18.666666666666668"/>
         </designable>
         <designable name="RZf-hF-iHm">
-            <size key="intrinsicContentSize" width="81.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="71.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="Xcj-0s-Cb1">
-            <size key="intrinsicContentSize" width="67.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="57.333333333333336" height="18.666666666666668"/>
         </designable>
         <designable name="cj6-Ym-Nps">
-            <size key="intrinsicContentSize" width="81.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="71.666666666666671" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>
@@ -189,6 +200,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

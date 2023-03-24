@@ -30,6 +30,14 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        if prefectureLabel.text != "" && addressTextField.text != "" {
+            okButton.isEnabled = true
+            okButton.configuration?.background.backgroundColor = UIColor.white
+        } else {
+            okButton.isEnabled = false
+            okButton.configuration?.background.backgroundColor = UIColor.systemGray3
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -46,6 +54,8 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
             
             if textField.text?.count != 7 {
                 alert.showAlert(vc: self, title: "エラー", message: "郵便番号は7桁で入力してください")
+                prefectureLabel.text = ""
+                addressTextField.text = ""
                 return
             }
             

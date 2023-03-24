@@ -76,7 +76,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qk1-NI-vCv">
-                                        <rect key="frame" x="121.66666666666669" y="362" width="150" height="50"/>
+                                        <rect key="frame" x="121.66666666666669" y="332" width="150" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="K47-lr-oGJ"/>
                                             <constraint firstAttribute="width" constant="150" id="vos-fL-oGK"/>
@@ -93,14 +93,25 @@
                                             <action selector="didTappedOKButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="itY-ll-2jN"/>
                                         </connections>
                                     </button>
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="J4H-xI-1yf">
+                                        <rect key="frame" x="20" y="402" width="353" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fB2-Jz-1SE"/>
+                                        </constraints>
+                                        <color key="pageIndicatorTintColor" systemColor="systemGrayColor"/>
+                                        <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor"/>
+                                    </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstItem="HDQ-oL-8Y5" firstAttribute="top" secondItem="Smz-rL-KSz" secondAttribute="top" constant="60" id="3Zh-mN-LzA"/>
+                                    <constraint firstItem="J4H-xI-1yf" firstAttribute="top" secondItem="Qk1-NI-vCv" secondAttribute="bottom" constant="20" id="NvO-GW-Zch"/>
+                                    <constraint firstAttribute="trailing" secondItem="J4H-xI-1yf" secondAttribute="trailing" constant="20" id="OtF-G8-Fhx"/>
                                     <constraint firstItem="HDQ-oL-8Y5" firstAttribute="centerX" secondItem="Smz-rL-KSz" secondAttribute="centerX" id="X8T-eI-rBz"/>
                                     <constraint firstAttribute="height" constant="600" id="XPK-99-OKD"/>
+                                    <constraint firstItem="J4H-xI-1yf" firstAttribute="leading" secondItem="Smz-rL-KSz" secondAttribute="leading" constant="20" id="rBs-5Y-8hu"/>
                                     <constraint firstItem="Qk1-NI-vCv" firstAttribute="centerX" secondItem="Smz-rL-KSz" secondAttribute="centerX" id="rtV-Yc-mqc"/>
-                                    <constraint firstItem="Qk1-NI-vCv" firstAttribute="top" secondItem="HDQ-oL-8Y5" secondAttribute="bottom" constant="50" id="yoV-Is-rNW"/>
+                                    <constraint firstItem="Qk1-NI-vCv" firstAttribute="top" secondItem="HDQ-oL-8Y5" secondAttribute="bottom" constant="20" id="yoV-Is-rNW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -121,15 +132,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11" y="-34"/>
+            <point key="canvasLocation" x="9.9236641221374047" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <designables>
         <designable name="GwR-71-CM0">
-            <size key="intrinsicContentSize" width="138.66666666666666" height="25.666666666666668"/>
+            <size key="intrinsicContentSize" width="128.66666666666666" height="25.666666666666668"/>
         </designable>
         <designable name="Rrf-HR-M2E">
-            <size key="intrinsicContentSize" width="128.33333333333334" height="25.666666666666668"/>
+            <size key="intrinsicContentSize" width="118.33333333333333" height="25.666666666666668"/>
         </designable>
     </designables>
     <resources>
@@ -138,6 +149,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

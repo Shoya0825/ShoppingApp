@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I0h-Pf-DEV">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Registration Birthday View Controller-->
+        <scene sceneID="pb8-Ac-VwU">
+            <objects>
+                <viewController storyboardIdentifier="RegistrationBirthday" id="I0h-Pf-DEV" customClass="RegistrationBirthdayViewController" customModule="ShoppingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YiJ-pi-U3f">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xV4-oR-2Na">
+                                <rect key="frame" x="0.0" y="59" width="393" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生年月日を選択してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-Qe-mtI">
+                                        <rect key="frame" x="64" y="120" width="265" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8d1-7p-lCG" customClass="DesignableLabel" customModule="ShoppingApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="144" width="353" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="HDB-yo-s22"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="systemGrayColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="eU0-r5-wZl" appends="YES" id="usL-ea-sb8"/>
+                                        </connections>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xke-0j-E7A">
+                                        <rect key="frame" x="121.66666666666669" y="394" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PRW-ir-NYy"/>
+                                            <constraint firstAttribute="width" constant="150" id="uT7-e7-hB0"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="次に進む">
+                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" systemColor="systemOrangeColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birthday.cake" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-Y4-ayA">
+                                        <rect key="frame" x="171.66666666666666" y="49.666666666666671" width="50" height="50.666666666666671"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3ES-Xu-BMK"/>
+                                            <constraint firstAttribute="width" constant="50" id="NsH-Th-3r3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MY2-GB-geg">
+                                        <rect key="frame" x="20" y="144" width="353" height="300"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="LMH-2M-869">
+                                                <rect key="frame" x="20" y="0.0" width="313" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="fmC-Iu-5Mh"/>
+                                                </constraints>
+                                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                            </datePicker>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uZ7-ni-rAv">
+                                                <rect key="frame" x="0.0" y="200" width="353" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXU-ID-qmp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="設定"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="設定">
+                                                            <backgroundConfiguration key="background">
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="strokeColor" systemColor="systemGrayColor"/>
+                                                            </backgroundConfiguration>
+                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTappedSetBirthdayButton:" destination="I0h-Pf-DEV" eventType="touchUpInside" id="1jX-m7-KXg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJu-xh-e2z">
+                                                        <rect key="frame" x="0.0" y="50" width="353" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="キャンセル">
+                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="baseForegroundColor" systemColor="systemGrayColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTappedCancelButton:" destination="I0h-Pf-DEV" eventType="touchUpInside" id="Dlv-Ow-yMG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="uZ7-ni-rAv" firstAttribute="leading" secondItem="MY2-GB-geg" secondAttribute="leading" id="4hu-lp-g7t"/>
+                                            <constraint firstAttribute="bottom" secondItem="uZ7-ni-rAv" secondAttribute="bottom" id="5z2-FA-hhl"/>
+                                            <constraint firstItem="LMH-2M-869" firstAttribute="top" secondItem="MY2-GB-geg" secondAttribute="top" id="9GI-kg-Ezk"/>
+                                            <constraint firstItem="uZ7-ni-rAv" firstAttribute="top" secondItem="LMH-2M-869" secondAttribute="bottom" id="Ijb-Tk-QsY"/>
+                                            <constraint firstAttribute="trailing" secondItem="LMH-2M-869" secondAttribute="trailing" constant="20" id="SpT-J5-6mv"/>
+                                            <constraint firstItem="LMH-2M-869" firstAttribute="leading" secondItem="MY2-GB-geg" secondAttribute="leading" constant="20" id="a1h-fF-zFA"/>
+                                            <constraint firstAttribute="trailing" secondItem="uZ7-ni-rAv" secondAttribute="trailing" id="emn-jx-9o6"/>
+                                            <constraint firstAttribute="height" constant="300" id="w0Q-G6-bzV"/>
+                                        </constraints>
+                                    </view>
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="mkH-UO-bq3">
+                                        <rect key="frame" x="20" y="464" width="353" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="vPP-Ik-6gp"/>
+                                        </constraints>
+                                        <color key="pageIndicatorTintColor" systemColor="systemGrayColor"/>
+                                        <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="Xke-0j-E7A" firstAttribute="centerX" secondItem="xV4-oR-2Na" secondAttribute="centerX" id="3eF-yV-gdS"/>
+                                    <constraint firstItem="mkH-UO-bq3" firstAttribute="top" secondItem="Xke-0j-E7A" secondAttribute="bottom" constant="20" id="6zM-tb-7oe"/>
+                                    <constraint firstItem="tK6-Y4-ayA" firstAttribute="centerX" secondItem="xV4-oR-2Na" secondAttribute="centerX" id="757-74-3LO"/>
+                                    <constraint firstAttribute="trailing" secondItem="8d1-7p-lCG" secondAttribute="trailing" constant="20" id="7ey-3m-MKa"/>
+                                    <constraint firstItem="FYa-Qe-mtI" firstAttribute="centerX" secondItem="xV4-oR-2Na" secondAttribute="centerX" id="CF1-m2-Izv"/>
+                                    <constraint firstAttribute="height" constant="600" id="D4d-sf-0vh"/>
+                                    <constraint firstItem="8d1-7p-lCG" firstAttribute="leading" secondItem="xV4-oR-2Na" secondAttribute="leading" constant="20" id="LDY-XW-i5a"/>
+                                    <constraint firstItem="mkH-UO-bq3" firstAttribute="leading" secondItem="xV4-oR-2Na" secondAttribute="leading" constant="20" id="RWe-RH-epu"/>
+                                    <constraint firstItem="tK6-Y4-ayA" firstAttribute="top" secondItem="xV4-oR-2Na" secondAttribute="top" constant="50" id="SOE-PS-omL"/>
+                                    <constraint firstItem="8d1-7p-lCG" firstAttribute="top" secondItem="FYa-Qe-mtI" secondAttribute="bottom" id="TFa-9d-CZn"/>
+                                    <constraint firstItem="MY2-GB-geg" firstAttribute="leading" secondItem="xV4-oR-2Na" secondAttribute="leading" constant="20" id="TPo-6k-lOz"/>
+                                    <constraint firstAttribute="trailing" secondItem="mkH-UO-bq3" secondAttribute="trailing" constant="20" id="WQw-DX-GHB"/>
+                                    <constraint firstItem="FYa-Qe-mtI" firstAttribute="top" secondItem="tK6-Y4-ayA" secondAttribute="bottom" constant="20" id="Ynw-34-vxc"/>
+                                    <constraint firstItem="MY2-GB-geg" firstAttribute="top" secondItem="FYa-Qe-mtI" secondAttribute="bottom" id="knU-NP-m69"/>
+                                    <constraint firstItem="MY2-GB-geg" firstAttribute="bottom" secondItem="Xke-0j-E7A" secondAttribute="bottom" id="mUw-QA-W3e"/>
+                                    <constraint firstAttribute="trailing" secondItem="MY2-GB-geg" secondAttribute="trailing" constant="20" id="xGX-Hw-rMm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Amt-nY-ktV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Amt-nY-ktV" firstAttribute="trailing" secondItem="xV4-oR-2Na" secondAttribute="trailing" id="7Ca-Rj-TBv"/>
+                            <constraint firstItem="xV4-oR-2Na" firstAttribute="top" secondItem="Amt-nY-ktV" secondAttribute="top" id="XRm-SO-fXm"/>
+                            <constraint firstItem="xV4-oR-2Na" firstAttribute="leading" secondItem="Amt-nY-ktV" secondAttribute="leading" id="iYb-M9-qnR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="birthdayLabel" destination="8d1-7p-lCG" id="GE9-bL-4IM"/>
+                        <outlet property="datePicker" destination="LMH-2M-869" id="yVS-z3-pQp"/>
+                        <outlet property="pickerView" destination="MY2-GB-geg" id="G2j-T9-zVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlR-I4-2GD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eU0-r5-wZl" userLabel="BirthdayLable+Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didTappedBirthdayLabel:" destination="I0h-Pf-DEV" id="Ar5-yl-ffT"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="9.9236641221374047" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="8d1-7p-lCG"/>
+    </designables>
+    <resources>
+        <image name="birthday.cake" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

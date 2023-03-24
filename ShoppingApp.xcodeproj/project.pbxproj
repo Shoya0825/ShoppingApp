@@ -18,6 +18,10 @@
 		E81B6D0A29BB2E6D008AB17F /* UserIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E81B6D0829BB2E6D008AB17F /* UserIconCell.xib */; };
 		E83891C529C1AD1C003E5610 /* UserCreditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83891C329C1AD1C003E5610 /* UserCreditCell.swift */; };
 		E83891C629C1AD1C003E5610 /* UserCreditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E83891C429C1AD1C003E5610 /* UserCreditCell.xib */; };
+		E86693DE29CD4AD30088D4EF /* NSData+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86693DD29CD4AD30088D4EF /* NSData+String.swift */; };
+		E86693E029CD78090088D4EF /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86693DF29CD78090088D4EF /* UILabel+Extension.swift */; };
+		E86693E229CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86693E129CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard */; };
+		E86693E429CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86693E329CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift */; };
 		E88C464429C84B1500EE9084 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C464329C84B1500EE9084 /* Const.swift */; };
 		E88C464729C8552B00EE9084 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C464629C8552B00EE9084 /* AddressModel.swift */; };
 		E8BD44CF29B9BE5800BF0D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44CE29B9BE5800BF0D25 /* AppDelegate.swift */; };
@@ -31,6 +35,8 @@
 		E8BD44EA29B9CCC600BF0D25 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E929B9CCC600BF0D25 /* R.generated.swift */; };
 		E8C3D80B29CA9EF900BD5EE4 /* AddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */; };
 		E8E33BB029CBFEC700CF1296 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E33BAF29CBFEC700CF1296 /* AlertController.swift */; };
+		E8E33BB229CC493500CF1296 /* RegistrationBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E33BB129CC493500CF1296 /* RegistrationBirthday.storyboard */; };
+		E8E33BB429CC497200CF1296 /* RegistrationBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E33BB329CC497200CF1296 /* RegistrationBirthdayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,10 @@
 		E81B6D0829BB2E6D008AB17F /* UserIconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UserIconCell.xib; path = ShoppingApp/Storyboard/UserIconCell.xib; sourceTree = SOURCE_ROOT; };
 		E83891C329C1AD1C003E5610 /* UserCreditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreditCell.swift; sourceTree = "<group>"; };
 		E83891C429C1AD1C003E5610 /* UserCreditCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCreditCell.xib; sourceTree = "<group>"; };
+		E86693DD29CD4AD30088D4EF /* NSData+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSData+String.swift"; sourceTree = "<group>"; };
+		E86693DF29CD78090088D4EF /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		E86693E129CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationEmailAndPassword.storyboard; sourceTree = "<group>"; };
+		E86693E329CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationEmailAndPasswordViewController.swift; sourceTree = "<group>"; };
 		E88C464329C84B1500EE9084 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E88C464629C8552B00EE9084 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		E8BD44CB29B9BE5800BF0D25 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +72,8 @@
 		E8BD44E929B9CCC600BF0D25 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRequest.swift; sourceTree = "<group>"; };
 		E8E33BAF29CBFEC700CF1296 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		E8E33BB129CC493500CF1296 /* RegistrationBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationBirthday.storyboard; sourceTree = "<group>"; };
+		E8E33BB329CC497200CF1296 /* RegistrationBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationBirthdayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 				E80924D629C4085A00A7BFED /* UIView+Extension.swift */,
 				E80924D829C409F700A7BFED /* UITextField+Extension.swift */,
 				E8E33BAF29CBFEC700CF1296 /* AlertController.swift */,
+				E86693DD29CD4AD30088D4EF /* NSData+String.swift */,
+				E86693DF29CD78090088D4EF /* UILabel+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -175,6 +189,8 @@
 				E8BD44E429B9C8A500BF0D25 /* RegistrationName.storyboard */,
 				E81B6CF829BB0F55008AB17F /* RegistrationAddress.storyboard */,
 				E81B6CFE29BB17CE008AB17F /* UserMyPage.storyboard */,
+				E8E33BB129CC493500CF1296 /* RegistrationBirthday.storyboard */,
+				E86693E129CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -186,6 +202,8 @@
 				E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */,
 				E81B6CFC29BB1132008AB17F /* RegistrationAddressViewController.swift */,
 				E81B6D0029BB17ED008AB17F /* UserMyPageViewController.swift */,
+				E8E33BB329CC497200CF1296 /* RegistrationBirthdayViewController.swift */,
+				E86693E329CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,11 +272,13 @@
 				E81B6D0A29BB2E6D008AB17F /* UserIconCell.xib in Resources */,
 				E8BD44DB29B9BE5A00BF0D25 /* LaunchScreen.storyboard in Resources */,
 				E8BD44D829B9BE5A00BF0D25 /* Assets.xcassets in Resources */,
+				E8E33BB229CC493500CF1296 /* RegistrationBirthday.storyboard in Resources */,
 				E81B6CFF29BB17CE008AB17F /* UserMyPage.storyboard in Resources */,
 				E81B6CF929BB0F55008AB17F /* RegistrationAddress.storyboard in Resources */,
 				E83891C629C1AD1C003E5610 /* UserCreditCell.xib in Resources */,
 				E8BD44D629B9BE5800BF0D25 /* Login.storyboard in Resources */,
 				E8BD44E529B9C8A500BF0D25 /* RegistrationName.storyboard in Resources */,
+				E86693E229CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,16 +350,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86693E429CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift in Sources */,
 				E8BD44D329B9BE5800BF0D25 /* LoginViewController.swift in Sources */,
 				E8E33BB029CBFEC700CF1296 /* AlertController.swift in Sources */,
 				E8BD44CF29B9BE5800BF0D25 /* AppDelegate.swift in Sources */,
 				E80924D729C4085A00A7BFED /* UIView+Extension.swift in Sources */,
+				E8E33BB429CC497200CF1296 /* RegistrationBirthdayViewController.swift in Sources */,
 				E81B6D0129BB17ED008AB17F /* UserMyPageViewController.swift in Sources */,
 				E8C3D80B29CA9EF900BD5EE4 /* AddressRequest.swift in Sources */,
 				E8BD44EA29B9CCC600BF0D25 /* R.generated.swift in Sources */,
+				E86693E029CD78090088D4EF /* UILabel+Extension.swift in Sources */,
 				E88C464729C8552B00EE9084 /* AddressModel.swift in Sources */,
 				E88C464429C84B1500EE9084 /* Const.swift in Sources */,
 				E83891C529C1AD1C003E5610 /* UserCreditCell.swift in Sources */,
+				E86693DE29CD4AD30088D4EF /* NSData+String.swift in Sources */,
 				E80924D929C409F700A7BFED /* UITextField+Extension.swift in Sources */,
 				E8BD44D129B9BE5800BF0D25 /* SceneDelegate.swift in Sources */,
 				E81B6D0929BB2E6D008AB17F /* UserIconCell.swift in Sources */,
