@@ -13,6 +13,8 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var passwordCountErrorLabel: UILabel!
+    @IBOutlet weak var passwordErrorLabel: UILabel!
     
     var activeTextField: UITextField?
     
@@ -36,16 +38,77 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
         return true
     }
     
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if activeTextField == confirmTextField {
+            checkConfirmPassword()
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if activeTextField == emailTextField {
+            
+//            return string.isValidEmail
+            
+            
+        } else {
+            
+            if activeTextField == passwordTextField {
+                passwordErrorLabel.isHidden = true
+                
+                passwordCountErrorLabel.isHidden = (textField.text?.count ?? 0) + (string.count) >= 8
+            }
+            
+            if activeTextField == confirmTextField {
+                if passwordTextField.text == "" {
+                    passwordErrorLabel.text = "パスワードを先に入力してください"
+                    passwordErrorLabel.isHidden = false
+                    return false
+                }
+            }
+            return string.range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+        }
+        return true
+    }
+    
+    func isEmptyCheck() {
+        
+    }
+    
+    func isValidEmailAddress(email: String) -> Bool {
+        let mailAddressRegex = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", mailAddressRegex)
+        
+        return emailPredicate.evaluate(with: email)
+    }
+    
+    func checkConfirmPassword() {
+        if let passwordText = passwordTextField.text {
+            if confirmTextField.text == passwordText {
+                passwordErrorLabel.isHidden = true
+                
+            } else {
+                passwordErrorLabel.text = "パスワードが一致していません"
+                passwordErrorLabel.isHidden = false
+            }
+            
+        }
+    }
+    
+    
     @objc func keyboardWillShown(notification: NSNotification) {
         if let userInfo = notification.userInfo, let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
             
             if activeTextField == passwordTextField || activeTextField == confirmTextField {
-                let distance = (keyboardFrame.minY - okButton.frame.maxY) - 20
                 
-                if self.view.frame.origin.y == 0 {
-                    UIView.animate(withDuration: 0.1, animations: {
-                        self.view.frame.origin.y += distance
-                    })
+                if let confirmTextFieldFrame = confirmTextField.superview?.convert(confirmTextField.frame, to: view) {
+                    
+                    let distance = (keyboardFrame.minY - confirmTextFieldFrame.maxY) - 30
+                    
+                    if self.view.frame.origin.y == 0 {
+                        UIView.animate(withDuration: 0.1, animations: {
+                            self.view.frame.origin.y += distance
+                        })
+                    }
                 }
             }
         }
@@ -59,4 +122,10 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
         }
     }
     
+}
+
+extension String {
+    var isValidEmail: Bool {
+        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
+    }
 }
