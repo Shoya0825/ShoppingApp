@@ -181,16 +181,16 @@
     </scenes>
     <designables>
         <designable name="Izv-zY-mUf">
-            <size key="intrinsicContentSize" width="57.333333333333336" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="67.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="RZf-hF-iHm">
-            <size key="intrinsicContentSize" width="71.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="81.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="Xcj-0s-Cb1">
-            <size key="intrinsicContentSize" width="57.333333333333336" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="67.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="cj6-Ym-Nps">
-            <size key="intrinsicContentSize" width="71.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="81.666666666666671" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

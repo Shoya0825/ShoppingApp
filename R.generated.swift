@@ -110,13 +110,15 @@ struct _R {
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var login: login { .init(bundle: bundle) }
     var registrationAddress: registrationAddress { .init(bundle: bundle) }
     var registrationBirthday: registrationBirthday { .init(bundle: bundle) }
+    var registrationEmailAndPassword: registrationEmailAndPassword { .init(bundle: bundle) }
+    var registrationInputResult: registrationInputResult { .init(bundle: bundle) }
     var registrationName: registrationName { .init(bundle: bundle) }
     var userMyPage: userMyPage { .init(bundle: bundle) }
 
@@ -132,6 +134,12 @@ struct _R {
     func registrationBirthday(bundle: Foundation.Bundle) -> registrationBirthday {
       .init(bundle: bundle)
     }
+    func registrationEmailAndPassword(bundle: Foundation.Bundle) -> registrationEmailAndPassword {
+      .init(bundle: bundle)
+    }
+    func registrationInputResult(bundle: Foundation.Bundle) -> registrationInputResult {
+      .init(bundle: bundle)
+    }
     func registrationName(bundle: Foundation.Bundle) -> registrationName {
       .init(bundle: bundle)
     }
@@ -143,6 +151,8 @@ struct _R {
       try self.login.validate()
       try self.registrationAddress.validate()
       try self.registrationBirthday.validate()
+      try self.registrationEmailAndPassword.validate()
+      try self.registrationInputResult.validate()
       try self.registrationName.validate()
       try self.userMyPage.validate()
     }
@@ -203,6 +213,37 @@ struct _R {
       func validate() throws {
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "birthday.cake") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'birthday.cake' is used in storyboard 'RegistrationBirthday', but couldn't be loaded.") } }
         if registrationBirthday() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'registrationBirthday' could not be loaded from storyboard 'RegistrationBirthday' as 'RegistrationBirthdayViewController'.") }
+      }
+    }
+
+    /// Storyboard `RegistrationEmailAndPassword`.
+    struct registrationEmailAndPassword: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = RegistrationEmailAndPasswordViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "RegistrationEmailAndPassword"
+
+      var registrationEmailAndPassword: RswiftResources.StoryboardViewControllerIdentifier<RegistrationEmailAndPasswordViewController> { .init(identifier: "RegistrationEmailAndPassword", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "mail") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'mail' is used in storyboard 'RegistrationEmailAndPassword', but couldn't be loaded.") } }
+        if registrationEmailAndPassword() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'registrationEmailAndPassword' could not be loaded from storyboard 'RegistrationEmailAndPassword' as 'RegistrationEmailAndPasswordViewController'.") }
+      }
+    }
+
+    /// Storyboard `RegistrationInputResult`.
+    struct registrationInputResult: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = RegistrationInputResultViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "RegistrationInputResult"
+
+      var registrationInputResult: RswiftResources.StoryboardViewControllerIdentifier<RegistrationInputResultViewController> { .init(identifier: "RegistrationInputResult", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if registrationInputResult() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'registrationInputResult' could not be loaded from storyboard 'RegistrationInputResult' as 'RegistrationInputResultViewController'.") }
       }
     }
 

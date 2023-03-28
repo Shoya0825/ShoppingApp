@@ -13,8 +13,11 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var okButton: UIButton!
-    @IBOutlet weak var passwordCountErrorLabel: UILabel!
+    
+    @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
+    @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
+    
     
     var activeTextField: UITextField?
     
@@ -24,6 +27,15 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
         emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmTextField.delegate = self
+        
+        if emailTextField.text == "" || passwordTextField.text == "" || confirmTextField.text == "" {
+            okButton.isEnabled = false
+            okButton.configuration?.background.backgroundColor = UIColor.systemGray3
+        } else {
+            okButton.isEnabled = true
+            okButton.configuration?.background.backgroundColor = UIColor.white
+        }
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -39,56 +51,64 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        if activeTextField == emailTextField {
+            if let text = emailTextField.text {
+                let message = Validator.shared.emailValidationCheck(email: text)
+                emailErrorLabel.isHidden = message == ""
+                emailErrorLabel.text = message
+            }
+        }
+        
+        if activeTextField == passwordTextField {
+            if let text = passwordTextField.text {
+                let message = Validator.shared.passwordValidationCheck(password: text)
+                passwordErrorLabel.isHidden = message == ""
+                passwordErrorLabel.text = message
+            }
+        }
+        
         if activeTextField == confirmTextField {
-            checkConfirmPassword()
+            if let password = passwordTextField.text, let confirmPassword = confirmTextField.text {
+                let message = Validator.shared.confirmPasswordValidationCheck(password: password, confirmPassword: confirmPassword)
+                confirmPasswordErrorLabel.isHidden = message == ""
+                confirmPasswordErrorLabel.text = message
+            }
+        }
+        
+        if emailErrorLabel.isHidden && passwordErrorLabel.isHidden && confirmPasswordErrorLabel.isHidden {
+            okButton.isEnabled = true
+            okButton.configuration?.background.backgroundColor = UIColor.white
+        } else {
+            okButton.isEnabled = false
+            okButton.configuration?.background.backgroundColor = UIColor.systemGray3
         }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if activeTextField == emailTextField {
-            
-//            return string.isValidEmail
-            
-            
-        } else {
-            
-            if activeTextField == passwordTextField {
-                passwordErrorLabel.isHidden = true
-                
-                passwordCountErrorLabel.isHidden = (textField.text?.count ?? 0) + (string.count) >= 8
-            }
-            
-            if activeTextField == confirmTextField {
-                if passwordTextField.text == "" {
-                    passwordErrorLabel.text = "パスワードを先に入力してください"
-                    passwordErrorLabel.isHidden = false
-                    return false
-                }
+        
+        if activeTextField == confirmTextField {
+            if passwordTextField.text == "" {
+                confirmPasswordErrorLabel.text = "パスワードを先に入力してください"
+                confirmPasswordErrorLabel.isHidden = false
+                return false
             }
             return string.range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
         }
         return true
     }
     
-    func isEmptyCheck() {
-        
-    }
     
-    func isValidEmailAddress(email: String) -> Bool {
-        let mailAddressRegex = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", mailAddressRegex)
-        
-        return emailPredicate.evaluate(with: email)
-    }
+    
     
     func checkConfirmPassword() {
         if let passwordText = passwordTextField.text {
             if confirmTextField.text == passwordText {
-                passwordErrorLabel.isHidden = true
+                confirmPasswordErrorLabel.isHidden = true
                 
             } else {
-                passwordErrorLabel.text = "パスワードが一致していません"
-                passwordErrorLabel.isHidden = false
+                confirmPasswordErrorLabel.text = "パスワードが一致していません"
+                confirmPasswordErrorLabel.isHidden = false
             }
             
         }
@@ -122,10 +142,17 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
         }
     }
     
-}
-
-extension String {
-    var isValidEmail: Bool {
-        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
+    
+    @IBAction func didTappedOKButton(_ sender: Any) {
+        if let text = emailTextField.text {
+            
+            let message = Validator.shared.emailFormatCheck(email: text)
+            emailErrorLabel.isHidden = message == ""
+            emailErrorLabel.text = message
+            return
+        }
+        
+        
     }
+    
 }

@@ -21,6 +21,15 @@ extension UILabel {
         }
     }
     
+    @IBInspectable override var cornerRadius: CGFloat {
+        get {
+            return self.layer.cornerRadius
+        }
+        set {
+            self.layer.cornerRadius = newValue
+        }
+    }
+    
     @IBInspectable var borderColor: UIColor? {
         get {
             if let color = layer.borderColor {

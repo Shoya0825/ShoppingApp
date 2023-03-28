@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DesignableView: UIView {
+@IBDesignable class DesignableView: UIView {
 }
 
 extension UIView {
