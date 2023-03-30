@@ -22,6 +22,8 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
     var addresses: AddressModel?
     let alert = AlertController()
     
+    var isChanged = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +32,10 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if prefectureLabel.text != "" && addressTextField.text != "" {
             okButton.isEnabled = true
@@ -37,6 +43,12 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
         } else {
             okButton.isEnabled = false
             okButton.configuration?.background.backgroundColor = UIColor.systemGray3
+        }
+        
+        if isChanged {
+            zipCodeTextField.text = UserData.shared.zipCode
+            prefectureLabel.text = UserData.shared.prefecture
+            addressTextField.text = UserData.shared.address
         }
     }
     
@@ -119,6 +131,9 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
                 self.prefectureLabel.text = prefecture
                 self.addressTextField.text = city + town
                 
+                self.okButton.isEnabled = true
+                self.okButton.configuration?.background.backgroundColor = UIColor.white
+                
             } else {
                 self.alert.showAlert(vc: self, title: "エラー", message: "郵便番号を再度入力してください")
             }
@@ -126,6 +141,18 @@ class RegistrationAddressViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func didTappedOKButton(_ sender: Any) {
+        UserData.shared.zipCode = zipCodeTextField.text
+        UserData.shared.prefecture = prefectureLabel.text
+        UserData.shared.address = addressTextField.text
+        
+        if isChanged {
+            self.navigationController?.popViewController(animated: true)
+            isChanged = false
+            
+        } else {
+            let vc = UIStoryboard(name: "RegistrationBirthday", bundle: nil).instantiateViewController(withIdentifier: "RegistrationBirthday") as! RegistrationBirthdayViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)}
     }
     
 }

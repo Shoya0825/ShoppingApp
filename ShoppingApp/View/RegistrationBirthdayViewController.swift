@@ -15,6 +15,7 @@ class RegistrationBirthdayViewController: UIViewController {
     @IBOutlet weak var pickerView: UIView!
     
     let birthdate = BirthDateFormatter()
+    var isChanged = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,14 @@ class RegistrationBirthdayViewController: UIViewController {
         datePicker.calendar = Calendar(identifier: .gregorian)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if isChanged {
+            pickerView.isHidden = true
+            birthdayLabel.text = UserData.shared.birthday
+        }
+    }
     
     @IBAction func didTappedSetBirthdayButton(_ sender: Any) {
         pickerView.isHidden = true
@@ -40,4 +49,17 @@ class RegistrationBirthdayViewController: UIViewController {
         pickerView.isHidden = true
     }
     
+    @IBAction func didTappedOKButton(_ sender: Any) {
+        UserData.shared.birthday = birthdayLabel.text
+        
+        if isChanged {
+            self.navigationController?.popViewController(animated: true)
+            isChanged = false
+            
+        } else {
+            let vc = UIStoryboard(name: "RegistrationEmailAndPassword", bundle: nil).instantiateViewController(withIdentifier: "RegistrationEmailAndPassword") as! RegistrationEmailAndPasswordViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

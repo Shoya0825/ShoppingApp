@@ -17,6 +17,7 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var okButton: UIButton!
     
     var isPushedLogin = false
+    var isChanged = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,19 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate {
         kanjiFirstName.delegate = self
         kanaLastName.delegate = self
         kanaFirstName.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         isEmptyCheck()
+        
+        if isChanged {
+            kanjiLastName.text = UserData.shared.kanjiLastName
+            kanjiFirstName.text = UserData.shared.kanjiFirstName
+            kanaLastName.text = UserData.shared.kanaLastName
+            kanaFirstName.text = UserData.shared.kanaFirstName
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,21 +50,11 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return string.range(of: "[^ぁ-んーァ-ンヴー一-龠]", options: .regularExpression) == nil
+        return string.range(of: "[^ぁ-ゞーァ-ンヴー一-龠]", options: .regularExpression) == nil
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         isEmptyCheck()
-    }
-    
-    func isEmptyCheck() {
-        if kanjiLastName.text == "" || kanjiFirstName.text == "" || kanaLastName.text == "" || kanaFirstName.text == "" {
-            okButton.isEnabled = false
-            okButton.configuration?.background.backgroundColor = UIColor.systemGray3
-        } else {
-            okButton.isEnabled = true
-            okButton.configuration?.background.backgroundColor = UIColor.white
-        }
     }
     
     @objc func keyboardWillShown(notification: NSNotification) {
@@ -76,11 +78,32 @@ class RegistrationNameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func isEmptyCheck() {
+        if kanjiLastName.text == "" || kanjiFirstName.text == "" || kanaLastName.text == "" || kanaFirstName.text == "" {
+            okButton.isEnabled = false
+            okButton.configuration?.background.backgroundColor = UIColor.systemGray3
+        } else {
+            okButton.isEnabled = true
+            okButton.configuration?.background.backgroundColor = UIColor.white
+        }
+    }
+    
     
     @IBAction func didTappedOKButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "RegistrationAddress", bundle: nil).instantiateViewController(withIdentifier: "RegistrationAddress") as! RegistrationAddressViewController
+        UserData.shared.kanjiLastName = kanjiLastName.text
+        UserData.shared.kanjiFirstName = kanjiFirstName.text
+        UserData.shared.kanaLastName = kanaLastName.text
+        UserData.shared.kanaFirstName = kanaFirstName.text
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        if isChanged {
+            self.navigationController?.popViewController(animated: true)
+            isChanged = false
+            
+        } else {
+            let vc = UIStoryboard(name: "RegistrationAddress", bundle: nil).instantiateViewController(withIdentifier: "RegistrationAddress") as! RegistrationAddressViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     

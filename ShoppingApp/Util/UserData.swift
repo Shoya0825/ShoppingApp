@@ -6,24 +6,25 @@
 //
 
 import UIKit
+import RealmSwift
 
-class UserData {
+class UserData: Object {
     
-    let shared = UserData()
+    static let shared = UserData()
     
-    var kanjiLastName: String?
-    var kanjiFirstName: String?
-    var kanaLastName: String?
-    var kanaFirstName: String?
+    @objc dynamic var kanjiLastName: String?
+    @objc dynamic var kanjiFirstName: String?
+    @objc dynamic var kanaLastName: String?
+    @objc dynamic var kanaFirstName: String?
     
-    var birthday: String?
+    @objc dynamic var birthday: String?
     
-    var zipCode: String?
-    var prefecture: String?
-    var address: String?
+    @objc dynamic var zipCode: String?
+    @objc dynamic var prefecture: String?
+    @objc dynamic var address: String?
     
-    var email: String?
-    var password: String?
+    @objc dynamic var email: String?
+    @objc dynamic var password: String?
     
     func reset() {
         kanjiLastName = ""

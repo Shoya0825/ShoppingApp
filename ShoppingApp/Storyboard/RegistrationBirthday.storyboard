@@ -60,6 +60,9 @@
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTappedOKButton:" destination="I0h-Pf-DEV" eventType="touchUpInside" id="GjY-GF-IOo"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birthday.cake" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-Y4-ayA">
                                         <rect key="frame" x="171.66666666666666" y="49.666666666666671" width="50" height="50.666666666666671"/>

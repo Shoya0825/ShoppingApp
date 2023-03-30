@@ -20,6 +20,7 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
     
     
     var activeTextField: UITextField?
+    var isChanged = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,13 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
         emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmTextField.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if emailTextField.text == "" || passwordTextField.text == "" || confirmTextField.text == "" {
             okButton.isEnabled = false
@@ -36,9 +44,11 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
             okButton.configuration?.background.backgroundColor = UIColor.white
         }
         
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        if isChanged {
+            emailTextField.text = UserData.shared.email
+            passwordTextField.text = UserData.shared.password
+            confirmTextField.text = UserData.shared.password
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -98,9 +108,6 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
         return true
     }
     
-    
-    
-    
     func checkConfirmPassword() {
         if let passwordText = passwordTextField.text {
             if confirmTextField.text == passwordText {
@@ -149,10 +156,24 @@ class RegistrationEmailAndPasswordViewController: UIViewController, UITextFieldD
             let message = Validator.shared.emailFormatCheck(email: text)
             emailErrorLabel.isHidden = message == ""
             emailErrorLabel.text = message
-            return
+            
+            if message != "" {
+                return
+            }
         }
         
+        UserData.shared.email = emailTextField.text
+        UserData.shared.password = passwordTextField.text
         
+        if isChanged {
+            self.navigationController?.popViewController(animated: true)
+            isChanged = false
+            
+        } else {
+            let vc = UIStoryboard(name: "RegistrationInputResult", bundle: nil).instantiateViewController(withIdentifier: "RegistrationInputResult") as! RegistrationInputResultViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

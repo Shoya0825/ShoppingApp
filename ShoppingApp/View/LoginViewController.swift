@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
 //            vc.isPushedLogin = true
 //            self.navigationController?.pushViewController(vc, animated: true)
 //        }
-        let vc = UIStoryboard(name: "RegistrationInputResult", bundle: nil).instantiateViewController(withIdentifier: "RegistrationInputResult") as! RegistrationInputResultViewController
+        let vc = UIStoryboard(name: "RegistrationName", bundle: nil).instantiateViewController(withIdentifier: "RegistrationName") as! RegistrationNameViewController
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
