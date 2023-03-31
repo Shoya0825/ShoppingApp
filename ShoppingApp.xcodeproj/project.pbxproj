@@ -23,6 +23,12 @@
 		E86693E029CD78090088D4EF /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86693DF29CD78090088D4EF /* UILabel+Extension.swift */; };
 		E86693E229CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86693E129CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard */; };
 		E86693E429CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86693E329CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift */; };
+		E86C647529D6627200ADCF34 /* GlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86C647429D6627200ADCF34 /* GlobalViewController.swift */; };
+		E86C647B29D6AD3400ADCF34 /* TabRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86C647A29D6AD3400ADCF34 /* TabRootViewController.swift */; };
+		E86C647D29D6AD8600ADCF34 /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86C647C29D6AD8600ADCF34 /* Tab.storyboard */; };
+		E86C647F29D6D2C700ADCF34 /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86C647E29D6D2C700ADCF34 /* ItemList.storyboard */; };
+		E86C648129D6D3C600ADCF34 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86C648029D6D3C600ADCF34 /* ItemListViewController.swift */; };
+		E86C648329D6D4A100ADCF34 /* ItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86C648229D6D4A100ADCF34 /* ItemData.swift */; };
 		E86F110229D28E870053D63B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F110129D28E870053D63B /* Validator.swift */; };
 		E86F110429D2C56D0053D63B /* RegistrationInputResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86F110329D2C56D0053D63B /* RegistrationInputResult.storyboard */; };
 		E86F110629D2C75D0053D63B /* RegistrationInputResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F110529D2C75D0053D63B /* RegistrationInputResultViewController.swift */; };
@@ -62,6 +68,12 @@
 		E86693DF29CD78090088D4EF /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		E86693E129CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationEmailAndPassword.storyboard; sourceTree = "<group>"; };
 		E86693E329CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationEmailAndPasswordViewController.swift; sourceTree = "<group>"; };
+		E86C647429D6627200ADCF34 /* GlobalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewController.swift; sourceTree = "<group>"; };
+		E86C647A29D6AD3400ADCF34 /* TabRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRootViewController.swift; sourceTree = "<group>"; };
+		E86C647C29D6AD8600ADCF34 /* Tab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tab.storyboard; sourceTree = "<group>"; };
+		E86C647E29D6D2C700ADCF34 /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
+		E86C648029D6D3C600ADCF34 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		E86C648229D6D4A100ADCF34 /* ItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemData.swift; sourceTree = "<group>"; };
 		E86F110129D28E870053D63B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		E86F110329D2C56D0053D63B /* RegistrationInputResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationInputResult.storyboard; sourceTree = "<group>"; };
 		E86F110529D2C75D0053D63B /* RegistrationInputResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInputResultViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +135,7 @@
 				E86693DF29CD78090088D4EF /* UILabel+Extension.swift */,
 				E86F110129D28E870053D63B /* Validator.swift */,
 				E8438D3E29D2EA6E00077914 /* UserData.swift */,
+				E86C648229D6D4A100ADCF34 /* ItemData.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -202,6 +215,8 @@
 				E8E33BB129CC493500CF1296 /* RegistrationBirthday.storyboard */,
 				E86693E129CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard */,
 				E86F110329D2C56D0053D63B /* RegistrationInputResult.storyboard */,
+				E86C647C29D6AD8600ADCF34 /* Tab.storyboard */,
+				E86C647E29D6D2C700ADCF34 /* ItemList.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -216,6 +231,9 @@
 				E8E33BB329CC497200CF1296 /* RegistrationBirthdayViewController.swift */,
 				E86693E329CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift */,
 				E86F110529D2C75D0053D63B /* RegistrationInputResultViewController.swift */,
+				E86C647429D6627200ADCF34 /* GlobalViewController.swift */,
+				E86C647A29D6AD3400ADCF34 /* TabRootViewController.swift */,
+				E86C648029D6D3C600ADCF34 /* ItemListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,6 +303,8 @@
 				E8BD44DB29B9BE5A00BF0D25 /* LaunchScreen.storyboard in Resources */,
 				E86F110429D2C56D0053D63B /* RegistrationInputResult.storyboard in Resources */,
 				E8BD44D829B9BE5A00BF0D25 /* Assets.xcassets in Resources */,
+				E86C647D29D6AD8600ADCF34 /* Tab.storyboard in Resources */,
+				E86C647F29D6D2C700ADCF34 /* ItemList.storyboard in Resources */,
 				E8E33BB229CC493500CF1296 /* RegistrationBirthday.storyboard in Resources */,
 				E81B6CFF29BB17CE008AB17F /* UserMyPage.storyboard in Resources */,
 				E81B6CF929BB0F55008AB17F /* RegistrationAddress.storyboard in Resources */,
@@ -365,13 +385,17 @@
 			files = (
 				E86693E429CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift in Sources */,
 				E8BD44D329B9BE5800BF0D25 /* LoginViewController.swift in Sources */,
+				E86C648129D6D3C600ADCF34 /* ItemListViewController.swift in Sources */,
 				E8E33BB029CBFEC700CF1296 /* AlertController.swift in Sources */,
 				E8BD44CF29B9BE5800BF0D25 /* AppDelegate.swift in Sources */,
 				E80924D729C4085A00A7BFED /* UIView+Extension.swift in Sources */,
+				E86C648329D6D4A100ADCF34 /* ItemData.swift in Sources */,
 				E86F110629D2C75D0053D63B /* RegistrationInputResultViewController.swift in Sources */,
 				E8E33BB429CC497200CF1296 /* RegistrationBirthdayViewController.swift in Sources */,
 				E81B6D0129BB17ED008AB17F /* UserMyPageViewController.swift in Sources */,
+				E86C647B29D6AD3400ADCF34 /* TabRootViewController.swift in Sources */,
 				E8C3D80B29CA9EF900BD5EE4 /* AddressRequest.swift in Sources */,
+				E86C647529D6627200ADCF34 /* GlobalViewController.swift in Sources */,
 				E8BD44EA29B9CCC600BF0D25 /* R.generated.swift in Sources */,
 				E86693E029CD78090088D4EF /* UILabel+Extension.swift in Sources */,
 				E88C464729C8552B00EE9084 /* AddressModel.swift in Sources */,
