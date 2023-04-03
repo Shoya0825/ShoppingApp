@@ -20,7 +20,7 @@ class TabRootViewController: UITabBarController {
     }
     
     private func setupTab() {
-        let vc1 = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login")
+        let vc1 = UIStoryboard(name: "ItemList", bundle: nil).instantiateViewController(withIdentifier: "ItemList")
         vc1.tabBarItem = UITabBarItem(title: "tab1", image: .none, tag: 0)
 
         let vc2 = UIStoryboard(name: "UserMyPage", bundle: nil).instantiateViewController(withIdentifier: "UserMyPage")

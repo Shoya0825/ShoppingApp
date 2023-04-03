@@ -14,6 +14,10 @@ class ItemData: Object {
     
     @objc dynamic var itemName: String?
     @objc dynamic var itemPrice: String?
+    @objc dynamic var itemImage: UIImage?
+    
+    
+    
     
     
 }

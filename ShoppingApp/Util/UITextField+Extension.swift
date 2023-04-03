@@ -59,6 +59,32 @@ extension UITextField {
             self.layer.masksToBounds = true
         }
     }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return self.layer.borderWidth
+        }
+        set {
+            self.layer.borderWidth = newValue
+            self.layer.masksToBounds = true
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            if let color = self.layer.borderColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                self.layer.borderColor = color.cgColor
+            } else {
+                self.layer.borderColor = nil
+            }
+        }
+    }
 }
 
 

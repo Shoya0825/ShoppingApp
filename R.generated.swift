@@ -13,11 +13,15 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 struct _R {
   let bundle: Foundation.Bundle
   var color: color { .init(bundle: bundle) }
+  var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
   func color(bundle: Foundation.Bundle) -> color {
+    .init(bundle: bundle)
+  }
+  func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
   func info(bundle: Foundation.Bundle) -> info {
@@ -44,6 +48,20 @@ struct _R {
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+  }
+
+  /// This `_R.image` struct is generated, and contains static references to 3 images.
+  struct image {
+    let bundle: Foundation.Bundle
+
+    /// Image `pants1`.
+    var pants1: RswiftResources.ImageResource { .init(name: "pants1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `shoes1`.
+    var shoes1: RswiftResources.ImageResource { .init(name: "shoes1", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `shoes2`.
+    var shoes2: RswiftResources.ImageResource { .init(name: "shoes2", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -88,16 +106,27 @@ struct _R {
             let bundle: Foundation.Bundle
             var uiSceneConfigurationName: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneConfigurationName") ?? "Default Configuration" }
             var uiSceneDelegateClassName: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate" }
-            var uiSceneStoryboardFile: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneStoryboardFile") ?? "Login" }
           }
         }
       }
     }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     let bundle: Foundation.Bundle
+
+    /// Nib `ItemMainInfoCell`.
+    var itemMainInfoCell: RswiftResources.NibReference<ItemMainInfoCell> { .init(name: "ItemMainInfoCell", bundle: bundle) }
+
+    /// Nib `ItemPhotoCell`.
+    var itemPhotoCell: RswiftResources.NibReference<ItemPhotoCell> { .init(name: "ItemPhotoCell", bundle: bundle) }
+
+    /// Nib `ItemPriceCell`.
+    var itemPriceCell: RswiftResources.NibReference<ItemPriceCell> { .init(name: "ItemPriceCell", bundle: bundle) }
+
+    /// Nib `ListedItemCell`.
+    var listedItemCell: RswiftResources.NibReference<ListedItemCell> { .init(name: "ListedItemCell", bundle: bundle) }
 
     /// Nib `UserCreditCell`.
     var userCreditCell: RswiftResources.NibReference<UserCreditCell> { .init(name: "UserCreditCell", bundle: bundle) }
@@ -106,13 +135,17 @@ struct _R {
     var userIconCell: RswiftResources.NibReference<UserIconCell> { .init(name: "UserIconCell", bundle: bundle) }
 
     func validate() throws {
+      if UIKit.UIImage(named: "pants1", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'pants1' is used in nib 'ListedItemCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "shoes1", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'shoes1' is used in nib 'ListedItemCell', but couldn't be loaded.") }
+      if UIKit.UIImage(named: "shoes2", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'shoes2' is used in nib 'ListedItemCell', but couldn't be loaded.") }
       if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "person.crop.circle.fill") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'person.crop.circle.fill' is used in nib 'UserIconCell', but couldn't be loaded.") } }
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 8 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 12 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
+    var itemList: itemList { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var login: login { .init(bundle: bundle) }
     var registrationAddress: registrationAddress { .init(bundle: bundle) }
@@ -120,8 +153,14 @@ struct _R {
     var registrationEmailAndPassword: registrationEmailAndPassword { .init(bundle: bundle) }
     var registrationInputResult: registrationInputResult { .init(bundle: bundle) }
     var registrationName: registrationName { .init(bundle: bundle) }
+    var tab: tab { .init(bundle: bundle) }
+    var userExhibit: userExhibit { .init(bundle: bundle) }
+    var userInputItemInfo: userInputItemInfo { .init(bundle: bundle) }
     var userMyPage: userMyPage { .init(bundle: bundle) }
 
+    func itemList(bundle: Foundation.Bundle) -> itemList {
+      .init(bundle: bundle)
+    }
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
       .init(bundle: bundle)
     }
@@ -143,10 +182,20 @@ struct _R {
     func registrationName(bundle: Foundation.Bundle) -> registrationName {
       .init(bundle: bundle)
     }
+    func tab(bundle: Foundation.Bundle) -> tab {
+      .init(bundle: bundle)
+    }
+    func userExhibit(bundle: Foundation.Bundle) -> userExhibit {
+      .init(bundle: bundle)
+    }
+    func userInputItemInfo(bundle: Foundation.Bundle) -> userInputItemInfo {
+      .init(bundle: bundle)
+    }
     func userMyPage(bundle: Foundation.Bundle) -> userMyPage {
       .init(bundle: bundle)
     }
     func validate() throws {
+      try self.itemList.validate()
       try self.launchScreen.validate()
       try self.login.validate()
       try self.registrationAddress.validate()
@@ -154,9 +203,27 @@ struct _R {
       try self.registrationEmailAndPassword.validate()
       try self.registrationInputResult.validate()
       try self.registrationName.validate()
+      try self.tab.validate()
+      try self.userExhibit.validate()
+      try self.userInputItemInfo.validate()
       try self.userMyPage.validate()
     }
 
+
+    /// Storyboard `ItemList`.
+    struct itemList: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = ItemListViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "ItemList"
+
+      var itemList: RswiftResources.StoryboardViewControllerIdentifier<ItemListViewController> { .init(identifier: "ItemList", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if itemList() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'itemList' could not be loaded from storyboard 'ItemList' as 'ItemListViewController'.") }
+      }
+    }
 
     /// Storyboard `LaunchScreen`.
     struct launchScreen: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
@@ -260,6 +327,46 @@ struct _R {
       func validate() throws {
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "person.crop.circle.fill") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'person.crop.circle.fill' is used in storyboard 'RegistrationName', but couldn't be loaded.") } }
         if registrationName() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'registrationName' could not be loaded from storyboard 'RegistrationName' as 'RegistrationNameViewController'.") }
+      }
+    }
+
+    /// Storyboard `Tab`.
+    struct tab: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = TabRootViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "Tab"
+
+      var tabRootViewController: RswiftResources.StoryboardViewControllerIdentifier<TabRootViewController> { .init(identifier: "TabRootViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if tabRootViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'tabRootViewController' could not be loaded from storyboard 'Tab' as 'TabRootViewController'.") }
+      }
+    }
+
+    /// Storyboard `UserExhibit`.
+    struct userExhibit: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = UserExhibitViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "UserExhibit"
+      func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "camera") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'camera' is used in storyboard 'UserExhibit', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "photo.artframe") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'photo.artframe' is used in storyboard 'UserExhibit', but couldn't be loaded.") } }
+      }
+    }
+
+    /// Storyboard `UserInputItemInfo`.
+    struct userInputItemInfo: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = UserInputItemInfoViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "UserInputItemInfo"
+      func validate() throws {
+
       }
     }
 
