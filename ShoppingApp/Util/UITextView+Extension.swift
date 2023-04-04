@@ -11,12 +11,32 @@ import UIKit
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
+        setDonebutton()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setDonebutton()
     }
     
+    private func setDonebutton() {
+        let toolbar = UIToolbar()
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                    target: nil,
+                                    action: nil)
+        
+        let doneButton = UIBarButtonItem(title: "完了",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(didTappedDoneButton))
+        toolbar.items = [space, doneButton]
+        toolbar.sizeToFit()
+        self.inputAccessoryView = toolbar
+    }
+    
+    @objc func didTappedDoneButton() {
+        self.resignFirstResponder()
+    }
 }
 
 extension UITextView {

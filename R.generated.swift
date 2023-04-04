@@ -365,8 +365,11 @@ struct _R {
       let bundle: Foundation.Bundle
 
       let name = "UserInputItemInfo"
-      func validate() throws {
 
+      var userInputItemInfo: RswiftResources.StoryboardViewControllerIdentifier<UserInputItemInfoViewController> { .init(identifier: "UserInputItemInfo", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if userInputItemInfo() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'userInputItemInfo' could not be loaded from storyboard 'UserInputItemInfo' as 'UserInputItemInfoViewController'.") }
       }
     }
 

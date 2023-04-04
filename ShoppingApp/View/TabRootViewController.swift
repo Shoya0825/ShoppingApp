@@ -25,7 +25,10 @@ class TabRootViewController: UITabBarController {
 
         let vc2 = UIStoryboard(name: "UserMyPage", bundle: nil).instantiateViewController(withIdentifier: "UserMyPage")
         vc2.tabBarItem = UITabBarItem(title: "tab2", image: .none, tag: 0)
+        
+        let vc3 = UIStoryboard(name: "UserInputItemInfo", bundle: nil).instantiateViewController(withIdentifier: "UserInputItemInfo")
+        vc3.tabBarItem = UITabBarItem(title: "tab3", image: .none, tag: 0)
 
-        viewControllers = [vc1, vc2]
+        viewControllers = [vc1, vc2, vc3]
     }
 }

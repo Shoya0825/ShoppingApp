@@ -67,12 +67,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LsL-F3-gQ7" customClass="DesignableTextView" customModule="ShoppingApp" customModuleProvider="target">
-                        <rect key="frame" x="30" y="196" width="393" height="200"/>
+                        <rect key="frame" x="10" y="196" width="433" height="200"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="kr0-Hy-h94"/>
                         </constraints>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -90,7 +89,7 @@
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="LsL-F3-gQ7" secondAttribute="trailing" constant="10" id="42N-Wc-fX9"/>
+                    <constraint firstAttribute="trailing" secondItem="LsL-F3-gQ7" secondAttribute="trailing" constant="10" id="42N-Wc-fX9"/>
                     <constraint firstAttribute="trailing" secondItem="JtN-3z-K5u" secondAttribute="trailing" constant="10" id="73h-m5-lM0"/>
                     <constraint firstItem="V9i-Bf-Hxz" firstAttribute="top" secondItem="LsL-F3-gQ7" secondAttribute="bottom" constant="10" id="Dkl-Hp-aei"/>
                     <constraint firstItem="XCt-w7-7EB" firstAttribute="top" secondItem="gu5-UF-OqV" secondAttribute="bottom" constant="40" id="JLD-Hn-xhC"/>
@@ -105,10 +104,16 @@
                     <constraint firstItem="JtN-3z-K5u" firstAttribute="top" secondItem="gu5-UF-OqV" secondAttribute="bottom" constant="10" id="lhd-7q-Kt2"/>
                     <constraint firstItem="XCt-w7-7EB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="myM-uQ-lW3"/>
                     <constraint firstItem="1te-MH-Ffj" firstAttribute="top" secondItem="Q0X-jC-r9B" secondAttribute="bottom" constant="10" id="oE1-OV-H88"/>
-                    <constraint firstItem="LsL-F3-gQ7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="srR-bV-CRF"/>
+                    <constraint firstItem="LsL-F3-gQ7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="srR-bV-CRF"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="itemInfoCountLabel" destination="V9i-Bf-Hxz" id="AgU-eW-KkF"/>
+                <outlet property="itemInfoTextView" destination="LsL-F3-gQ7" id="Phu-Gq-eHJ"/>
+                <outlet property="itemNameCountLabel" destination="JtN-3z-K5u" id="j0s-M2-guR"/>
+                <outlet property="itemNameTextField" destination="gu5-UF-OqV" id="9vN-Om-EHD"/>
+            </connections>
             <point key="canvasLocation" x="46.564885496183201" y="111.26760563380282"/>
         </tableViewCell>
     </objects>
