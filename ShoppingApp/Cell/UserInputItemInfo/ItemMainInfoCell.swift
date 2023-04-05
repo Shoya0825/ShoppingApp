@@ -41,12 +41,15 @@ class ItemMainInfoCell: UITableViewCell, UITextViewDelegate, UITextFieldDelegate
             guard let stringRnage = Range(range, in: currentText) else { return false }
             
             let updatedText = currentText.replacingCharacters(in: stringRnage, with: string)
-            itemNameCountLabel.text = "\(updatedText.count)／40"
             
-            return updatedText.count <= 40
+            if updatedText.count > 40 {
+                return false
+            }
+            itemNameCountLabel.text = "\(updatedText.count)／40"
         }
         return true
     }
+    
     
     func textViewDidChange(_ textView: UITextView) {
 //        if textView.text.isEmpty {

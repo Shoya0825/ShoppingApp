@@ -7,17 +7,38 @@
 
 import UIKit
 
-class ItemPriceCell: UITableViewCell {
-
+class ItemPriceCell: UITableViewCell, UITextFieldDelegate {
+    
+    
+    @IBOutlet weak var itemPriceTextField: DesignableTextFiled!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        itemPriceTextField.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let currentText = textField.text else { return false }
+        
+        
+        
+        return true
+    }
+    
+    private func numberFormatter(text: String) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale.current
+        let number = formatter.number(from: text) ?? 0
+        
+        formatter.groupingSeparator = ","
+        formatter.groupingSize = 3
+        let outputString = formatter.string(from: number)
+        
+        return outputString!
+    }
 }

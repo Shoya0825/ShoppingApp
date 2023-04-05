@@ -212,7 +212,7 @@ struct _R {
 
     /// Storyboard `ItemList`.
     struct itemList: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
-      typealias InitialController = ItemListViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle: Foundation.Bundle
 
