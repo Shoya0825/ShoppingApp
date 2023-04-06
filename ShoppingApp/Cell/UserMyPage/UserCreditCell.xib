@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -66,6 +67,12 @@
                             <action selector="didTappedCreditChargeOKButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="g4m-s3-FRe"/>
                         </connections>
                     </button>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="再度ボタンをタップで閉じる" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZT-gr-nfo">
+                        <rect key="frame" x="229.66666666666663" y="21.666666666666668" width="146.33333333333337" height="14.333333333333332"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ViQ-Y9-1bf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1xs-gA-Ubp"/>
@@ -75,8 +82,10 @@
                     <constraint firstItem="Lhu-Wj-uqc" firstAttribute="leading" secondItem="YUr-Df-hgb" secondAttribute="leading" id="K9Z-XE-1JZ"/>
                     <constraint firstItem="fqe-4s-36s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="80" id="MMD-83-w8N"/>
                     <constraint firstItem="fqe-4s-36s" firstAttribute="top" secondItem="Lhu-Wj-uqc" secondAttribute="top" id="Qsc-Hk-YR8"/>
+                    <constraint firstItem="YUr-Df-hgb" firstAttribute="top" secondItem="GZT-gr-nfo" secondAttribute="bottom" constant="5" id="dP9-gF-xnD"/>
                     <constraint firstAttribute="trailing" secondItem="YUr-Df-hgb" secondAttribute="trailing" constant="10" id="mWI-Sa-oFu"/>
                     <constraint firstItem="YUr-Df-hgb" firstAttribute="top" secondItem="o7b-bV-JhM" secondAttribute="top" id="mzM-7E-bsn"/>
+                    <constraint firstItem="YUr-Df-hgb" firstAttribute="trailing" secondItem="GZT-gr-nfo" secondAttribute="trailing" id="qJr-aH-nHH"/>
                     <constraint firstItem="Lhu-Wj-uqc" firstAttribute="top" secondItem="YUr-Df-hgb" secondAttribute="bottom" constant="40" id="rty-69-9xd"/>
                     <constraint firstItem="tz1-II-cIc" firstAttribute="top" secondItem="Lhu-Wj-uqc" secondAttribute="bottom" id="ubh-Xt-uaa"/>
                     <constraint firstItem="tz1-II-cIc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="zzR-l5-JyY"/>
@@ -85,6 +94,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="creditChargeButton" destination="YUr-Df-hgb" id="ajz-Zs-bgQ"/>
+                <outlet property="creditChargeCloseLabel" destination="GZT-gr-nfo" id="hXC-2V-3cb"/>
                 <outlet property="creditChargeLabel" destination="fqe-4s-36s" id="sal-Iy-zXC"/>
                 <outlet property="creditChargeOKButton" destination="tz1-II-cIc" id="E08-04-j0Z"/>
                 <outlet property="creditChargeStepper" destination="Lhu-Wj-uqc" id="Ir2-gF-yfT"/>

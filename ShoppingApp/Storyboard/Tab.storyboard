@@ -40,6 +40,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2g5-43-KTp" secondAttribute="trailing" id="io8-fK-hpd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="I6I-4e-OXu"/>
                     <connections>
                         <outlet property="containerView" destination="dEH-59-PmS" id="6CG-NM-cdH"/>
                         <outlet property="tabContainerView" destination="2g5-43-KTp" id="j7U-2u-Bno"/>
@@ -47,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="-34"/>
+            <point key="canvasLocation" x="1870.9923664122136" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>

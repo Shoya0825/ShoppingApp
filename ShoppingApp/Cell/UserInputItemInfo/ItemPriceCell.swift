@@ -22,11 +22,35 @@ class ItemPriceCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let currentText = textField.text else { return false }
+        let currentText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         
+        guard let selectedRange = textField.selectedTextRange else { return false }
+        let cursorPosition = textField.offset(from: textField.beginningOfDocument, to: selectedRange.start)
         
+        let firstDigitIsZero = textField.text?.count == 1 && textField.text == "0"
         
+        // 1文字目0、右カーソルの場合2文字目問題未解決
+        if firstDigitIsZero {
+            if cursorPosition == 0 {
+                return string != "0"
+            } else {
+                if string != "0" {
+                    textField.text = string
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        
+        if let priceText = Int(text) {
+            textField.text = "\(priceText.formattedWithSeparator)"
+        }
     }
     
     private func numberFormatter(text: String) -> String {

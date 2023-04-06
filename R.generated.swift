@@ -211,17 +211,17 @@ struct _R {
 
 
     /// Storyboard `ItemList`.
-    struct itemList: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
-      typealias InitialController = UIKit.UINavigationController
-
+    struct itemList: RswiftResources.StoryboardReference {
       let bundle: Foundation.Bundle
 
       let name = "ItemList"
 
       var itemList: RswiftResources.StoryboardViewControllerIdentifier<ItemListViewController> { .init(identifier: "ItemList", storyboard: name, bundle: bundle) }
+      var itemListNavigationController: RswiftResources.StoryboardViewControllerIdentifier<UIKit.UINavigationController> { .init(identifier: "ItemListNavigationController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
         if itemList() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'itemList' could not be loaded from storyboard 'ItemList' as 'ItemListViewController'.") }
+        if itemListNavigationController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'itemListNavigationController' could not be loaded from storyboard 'ItemList' as 'UIKit.UINavigationController'.") }
       }
     }
 

@@ -36,4 +36,9 @@
             <point key="canvasLocation" x="45.801526717557252" y="5.2816901408450709"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="Hta-bY-2eO">
+            <size key="intrinsicContentSize" width="43.333333333333336" height="31.666666666666668"/>
+        </designable>
+    </designables>
 </document>

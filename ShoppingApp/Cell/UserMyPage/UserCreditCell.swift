@@ -15,6 +15,7 @@ class UserCreditCell: UITableViewCell {
     @IBOutlet weak var creditChargeLabel: UILabel!
     @IBOutlet weak var creditChargeStepper: UIStepper!
     @IBOutlet weak var creditChargeOKButton: UIButton!
+    @IBOutlet weak var creditChargeCloseLabel: UILabel!
     
     var userCredit = 0
     var creditAddValue = 0
@@ -34,12 +35,14 @@ class UserCreditCell: UITableViewCell {
             creditChargeLabel.isHidden = false
             creditChargeStepper.isHidden = false
             creditChargeOKButton.isHidden = false
+            creditChargeCloseLabel.isHidden = false
             creditIsHidden = false
             
         } else {
             creditChargeLabel.isHidden = true
             creditChargeStepper.isHidden = true
             creditChargeOKButton.isHidden = true
+            creditChargeCloseLabel.isHidden = true
             creditIsHidden = true
         }
     }
