@@ -57,6 +57,8 @@
 		E8BD44E729B9C8B500BF0D25 /* RegistrationNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */; };
 		E8BD44EA29B9CCC600BF0D25 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E929B9CCC600BF0D25 /* R.generated.swift */; };
 		E8C3D80B29CA9EF900BD5EE4 /* AddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */; };
+		E8DAD56C29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DAD56A29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift */; };
+		E8DAD56D29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8DAD56B29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib */; };
 		E8E33BB029CBFEC700CF1296 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E33BAF29CBFEC700CF1296 /* AlertController.swift */; };
 		E8E33BB229CC493500CF1296 /* RegistrationBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E33BB129CC493500CF1296 /* RegistrationBirthday.storyboard */; };
 		E8E33BB429CC497200CF1296 /* RegistrationBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E33BB329CC497200CF1296 /* RegistrationBirthdayViewController.swift */; };
@@ -117,6 +119,8 @@
 		E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNameViewController.swift; sourceTree = "<group>"; };
 		E8BD44E929B9CCC600BF0D25 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRequest.swift; sourceTree = "<group>"; };
+		E8DAD56A29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E8DAD56B29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		E8E33BAF29CBFEC700CF1296 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		E8E33BB129CC493500CF1296 /* RegistrationBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationBirthday.storyboard; sourceTree = "<group>"; };
 		E8E33BB329CC497200CF1296 /* RegistrationBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationBirthdayViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				E85DFD1529DAB2CC0000157F /* ItemMainInfoCell.xib */,
 				E85DFD1829DAB3420000157F /* ItemPriceCell.swift */,
 				E85DFD1929DAB3420000157F /* ItemPriceCell.xib */,
+				E8DAD56A29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift */,
+				E8DAD56B29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib */,
 			);
 			path = UserInputItemInfo;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				E8BD44D629B9BE5800BF0D25 /* Login.storyboard in Resources */,
 				E8BD44E529B9C8A500BF0D25 /* RegistrationName.storyboard in Resources */,
 				E85DFD1B29DAB3420000157F /* ItemPriceCell.xib in Resources */,
+				E8DAD56D29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib in Resources */,
 				E85DFD0D29DAA3540000157F /* UserInputItemInfo.storyboard in Resources */,
 				E85DFD0729DA72390000157F /* ListedItemCell.xib in Resources */,
 				E86693E229CD89AF0088D4EF /* RegistrationEmailAndPassword.storyboard in Resources */,
@@ -454,6 +461,7 @@
 			files = (
 				E85DFD1629DAB2CC0000157F /* ItemMainInfoCell.swift in Sources */,
 				E86693E429CD91140088D4EF /* RegistrationEmailAndPasswordViewController.swift in Sources */,
+				E8DAD56C29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift in Sources */,
 				E85DFD2029DACEA60000157F /* UITextView+Extension.swift in Sources */,
 				E8BD44D329B9BE5800BF0D25 /* LoginViewController.swift in Sources */,
 				E86C648129D6D3C600ADCF34 /* ItemListViewController.swift in Sources */,

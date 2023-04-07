@@ -21,7 +21,7 @@ extension UILabel {
         }
     }
     
-    @IBInspectable override var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return self.layer.cornerRadius
         }

@@ -22,20 +22,20 @@ class ItemPriceCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let currentText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        var currentText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         
         guard let selectedRange = textField.selectedTextRange else { return false }
         let cursorPosition = textField.offset(from: textField.beginningOfDocument, to: selectedRange.start)
         
         let firstDigitIsZero = textField.text?.count == 1 && textField.text == "0"
-        
         // 1文字目0、右カーソルの場合2文字目問題未解決
         if firstDigitIsZero {
             if cursorPosition == 0 {
                 return string != "0"
             } else {
                 if string != "0" {
-                    textField.text = string
+                    textField.text = currentText.first?.description
+                    print("textfield\(textField.text ?? "")")
                     return true
                 } else {
                     return false

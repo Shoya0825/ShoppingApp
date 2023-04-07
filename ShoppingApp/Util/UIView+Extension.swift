@@ -9,16 +9,20 @@ import Foundation
 import UIKit
 
 @IBDesignable class DesignableView: UIView {
-}
-
-extension UIView {
-    @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return self.layer.cornerRadius
-        }
-        set {
-            self.layer.cornerRadius = newValue
-            self.layer.masksToBounds = true
+    
+    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = true
         }
     }
+
+    @IBInspectable var cornerRadiusTopLeft: CGFloat = 0.0 {
+        didSet {
+            layer.maskedCorners = [.layerMinXMinYCorner]
+            layer.cornerRadius = cornerRadiusTopLeft
+        }
+    }
+    
 }
+

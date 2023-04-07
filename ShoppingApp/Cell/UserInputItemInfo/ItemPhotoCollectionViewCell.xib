@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ItemPhotoCollectionViewCell" id="gTV-IL-0wX" customClass="ItemPhotoCollectionViewCell" customModule="ShoppingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="163"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="163"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7l-sV-dPt">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="163"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system" imagePlacement="top" title="必須" imagePadding="5">
+                            <backgroundConfiguration key="background" cornerRadius="5">
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            </backgroundConfiguration>
+                        </buttonConfiguration>
+                    </button>
+                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bls-63-1eo" customClass="DesignableView" customModule="ShoppingApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ako-nF-ZZY">
+                                <rect key="frame" x="6" y="1" width="8" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="ako-nF-ZZY" firstAttribute="centerY" secondItem="bls-63-1eo" secondAttribute="centerY" id="4YQ-BK-DBU"/>
+                            <constraint firstAttribute="width" constant="20" id="FBc-I6-xCa"/>
+                            <constraint firstItem="ako-nF-ZZY" firstAttribute="centerX" secondItem="bls-63-1eo" secondAttribute="centerX" id="XRp-2J-e09"/>
+                            <constraint firstAttribute="height" constant="20" id="npq-7v-ecS"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusTopLeft">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="q7l-sV-dPt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Bo6-G0-O5u"/>
+                <constraint firstItem="bls-63-1eo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CjA-oG-JRw"/>
+                <constraint firstAttribute="bottom" secondItem="q7l-sV-dPt" secondAttribute="bottom" id="LKm-Yi-jXF"/>
+                <constraint firstItem="bls-63-1eo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tjc-Bn-K8c"/>
+                <constraint firstItem="q7l-sV-dPt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cXu-XU-dQ5"/>
+                <constraint firstAttribute="trailing" secondItem="q7l-sV-dPt" secondAttribute="trailing" id="eAQ-K5-bHz"/>
+            </constraints>
+            <size key="customSize" width="200" height="163"/>
+            <connections>
+                <outlet property="itemPhotoButton" destination="q7l-sV-dPt" id="q1d-04-hJK"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="28.52112676056338"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

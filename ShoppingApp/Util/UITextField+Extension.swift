@@ -50,7 +50,7 @@ import UIKit
 }
 
 extension UITextField {
-    @IBInspectable override var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return self.layer.cornerRadius
         }
