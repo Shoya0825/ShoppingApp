@@ -9,7 +9,6 @@ import UIKit
 
 class ItemPhotoCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var itemPhotoButton: UIButton!
     
     
     override func awakeFromNib() {

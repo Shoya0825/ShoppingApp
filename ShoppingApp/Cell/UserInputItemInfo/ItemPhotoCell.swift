@@ -50,4 +50,7 @@ class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UIColl
         return 10
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("tapped")
+    }
 }

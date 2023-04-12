@@ -57,6 +57,7 @@
 		E8BD44E729B9C8B500BF0D25 /* RegistrationNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */; };
 		E8BD44EA29B9CCC600BF0D25 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD44E929B9CCC600BF0D25 /* R.generated.swift */; };
 		E8C3D80B29CA9EF900BD5EE4 /* AddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */; };
+		E8C6BF9E29E3D955009E8C08 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6BF9D29E3D955009E8C08 /* UIImageView+Extension.swift */; };
 		E8DAD56C29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DAD56A29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift */; };
 		E8DAD56D29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8DAD56B29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib */; };
 		E8E33BB029CBFEC700CF1296 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E33BAF29CBFEC700CF1296 /* AlertController.swift */; };
@@ -119,6 +120,7 @@
 		E8BD44E629B9C8B500BF0D25 /* RegistrationNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNameViewController.swift; sourceTree = "<group>"; };
 		E8BD44E929B9CCC600BF0D25 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		E8C3D80A29CA9EF900BD5EE4 /* AddressRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRequest.swift; sourceTree = "<group>"; };
+		E8C6BF9D29E3D955009E8C08 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		E8DAD56A29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E8DAD56B29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		E8E33BAF29CBFEC700CF1296 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				E86F110129D28E870053D63B /* Validator.swift */,
 				E8438D3E29D2EA6E00077914 /* UserData.swift */,
 				E86C648229D6D4A100ADCF34 /* ItemData.swift */,
+				E8C6BF9D29E3D955009E8C08 /* UIImageView+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				E80924D929C409F700A7BFED /* UITextField+Extension.swift in Sources */,
 				E8438D3F29D2EA6E00077914 /* UserData.swift in Sources */,
 				E8BD44D129B9BE5800BF0D25 /* SceneDelegate.swift in Sources */,
+				E8C6BF9E29E3D955009E8C08 /* UIImageView+Extension.swift in Sources */,
 				E81B6D0929BB2E6D008AB17F /* UserIconCell.swift in Sources */,
 				E8BD44E729B9C8B500BF0D25 /* RegistrationNameViewController.swift in Sources */,
 				E86F110229D28E870053D63B /* Validator.swift in Sources */,

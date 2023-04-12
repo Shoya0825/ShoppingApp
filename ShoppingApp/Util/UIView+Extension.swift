@@ -10,14 +10,14 @@ import UIKit
 
 @IBDesignable class DesignableView: UIView {
     
-    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = true
         }
     }
 
-    @IBInspectable var cornerRadiusTopLeft: CGFloat = 0.0 {
+    @IBInspectable var cornerRadiusTopLeft: CGFloat = 0 {
         didSet {
             layer.maskedCorners = [.layerMinXMinYCorner]
             layer.cornerRadius = cornerRadiusTopLeft
