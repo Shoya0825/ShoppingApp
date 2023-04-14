@@ -50,7 +50,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJs-2O-fw6">
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJs-2O-fw6">
                         <rect key="frame" x="20" y="20" width="40" height="40"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ctp-eP-2U8">
@@ -87,6 +87,11 @@
                 <constraint firstItem="bls-63-1eo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qQc-8s-6hJ"/>
             </constraints>
             <size key="customSize" width="200" height="163"/>
+            <connections>
+                <outlet property="cameraButtonView" destination="cJs-2O-fw6" id="Qeq-GM-NGd"/>
+                <outlet property="itemPhotoCountLabel" destination="ako-nF-ZZY" id="HqE-SJ-pD8"/>
+                <outlet property="itemPhotoImageView" destination="58F-Zk-4qI" id="mge-7P-CqF"/>
+            </connections>
             <point key="canvasLocation" x="138.93129770992365" y="28.52112676056338"/>
         </collectionViewCell>
     </objects>

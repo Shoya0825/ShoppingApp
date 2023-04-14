@@ -6,30 +6,34 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var itemPhotoCollectionView: UICollectionView!
+    var delegate: ItemPhotoCellDelegate?
+    
+    let alert = AlertController()
+    var itemPhotoImage: UIImage?
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         itemPhotoCollectionView.delegate = self
         itemPhotoCollectionView.dataSource = self
-//        
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 50, height: 50)
-//        itemPhotoCollectionView.collectionViewLayout = layout
         
         itemPhotoCollectionView.register(UINib(nibName: "ItemPhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemPhotoCollectionViewCell")
+    }
+    
+    enum ItemPhotoCell: Int, CaseIterable {
+        case firstCell
+        case secondCell
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     
@@ -39,6 +43,13 @@ class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemPhotoCollectionViewCell", for: indexPath) as! ItemPhotoCollectionViewCell
+        
+        cell.itemPhotoCountLabel.text = String(indexPath.row + 1)
+        
+        if indexPath.row == 0 {
+            cell.cameraButtonView.isHidden = false
+        }
+        cell.itemPhotoImageView.image = itemPhotoImage
         
         return cell
     }
@@ -51,6 +62,47 @@ class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped")
+        if indexPath.row == 0 {
+            checkCameraAuthorization { authorized in
+                if authorized {
+                    self.delegate?.didTappedItemPhotoCell(self)
+                } else {
+                    self.alert.showCameraPermissionAlert()
+                }
+            }
+        }
     }
+    
+    private func checkCameraAuthorization(completion: @escaping (Bool) -> Void) {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        
+        switch status {
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                if granted {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            }
+        case .authorized:
+            completion(true)
+        case .denied, .restricted:
+            completion(false)
+        @unknown default:
+            completion(false)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else { return }
+        
+        itemPhotoImage = image
+        itemPhotoCollectionView.reloadData()
+        picker.dismiss(animated: true)
+    }
+}
+
+protocol ItemPhotoCellDelegate {
+    func didTappedItemPhotoCell(_ itemPhotoCell: ItemPhotoCell)
 }

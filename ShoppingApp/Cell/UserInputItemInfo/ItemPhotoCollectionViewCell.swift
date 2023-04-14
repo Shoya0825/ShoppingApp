@@ -10,10 +10,11 @@ import UIKit
 class ItemPhotoCollectionViewCell: UICollectionViewCell {
 
     
+    @IBOutlet weak var itemPhotoCountLabel: UILabel!
+    @IBOutlet weak var itemPhotoImageView: DesignableImageView!
+    @IBOutlet weak var cameraButtonView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
 }

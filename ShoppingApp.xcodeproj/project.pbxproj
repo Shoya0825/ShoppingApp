@@ -163,11 +163,8 @@
 				E80924D629C4085A00A7BFED /* UIView+Extension.swift */,
 				E80924D829C409F700A7BFED /* UITextField+Extension.swift */,
 				E85DFD1F29DACEA60000157F /* UITextView+Extension.swift */,
-				E8E33BAF29CBFEC700CF1296 /* AlertController.swift */,
 				E86693DD29CD4AD30088D4EF /* NSData+String.swift */,
 				E86693DF29CD78090088D4EF /* UILabel+Extension.swift */,
-				E86F110129D28E870053D63B /* Validator.swift */,
-				E8438D3E29D2EA6E00077914 /* UserData.swift */,
 				E86C648229D6D4A100ADCF34 /* ItemData.swift */,
 				E8C6BF9D29E3D955009E8C08 /* UIImageView+Extension.swift */,
 			);
@@ -236,6 +233,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E89D1DCA29E8EE340032D847 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E8438D3E29D2EA6E00077914 /* UserData.swift */,
+				E86F110129D28E870053D63B /* Validator.swift */,
+				E8E33BAF29CBFEC700CF1296 /* AlertController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E8BD44C229B9BE5800BF0D25 = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +270,7 @@
 				E8BD44E329B9C86800BF0D25 /* View */,
 				E81B6D0229BB18F1008AB17F /* Cell */,
 				E80924D529C4080500A7BFED /* Util */,
+				E89D1DCA29E8EE340032D847 /* Common */,
 				E88C464529C8551300EE9084 /* Model */,
 				E8BD44CE29B9BE5800BF0D25 /* AppDelegate.swift */,
 				E8BD44D029B9BE5800BF0D25 /* SceneDelegate.swift */,

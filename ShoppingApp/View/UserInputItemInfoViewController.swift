@@ -7,16 +7,15 @@
 
 import UIKit
 
-class UserInputItemInfoViewController: UITableViewController {
-    
+class UserInputItemInfoViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ItemPhotoCellDelegate {
     
     @IBOutlet var infoTableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         infoTableView.delegate = self
+        
         
         tableView.register(UINib(nibName: "ItemPhotoCell", bundle: nil), forCellReuseIdentifier: "ItemPhotoCell")
         tableView.register(UINib(nibName: "ItemMainInfoCell", bundle: nil), forCellReuseIdentifier: "ItemMainInfoCell")
@@ -61,6 +60,7 @@ class UserInputItemInfoViewController: UITableViewController {
         switch cellIndexPath {
         case .firstInputCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIndexPath.cellIdentifier) as! ItemPhotoCell
+            cell.delegate = self
             return cell
         case .secondInputCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIndexPath.cellIdentifier) as! ItemMainInfoCell
@@ -74,4 +74,18 @@ class UserInputItemInfoViewController: UITableViewController {
         return false
     }
     
+    
+    func didTappedItemPhotoCell(_ itemPhotoCell: ItemPhotoCell) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.delegate = self
+        
+        self.present(imagePicker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("呼ばれた")
+        
+        picker.dismiss(animated: true)
+    }
 }

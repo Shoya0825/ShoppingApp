@@ -112,7 +112,7 @@ struct _R {
     }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -121,6 +121,9 @@ struct _R {
 
     /// Nib `ItemPhotoCell`.
     var itemPhotoCell: RswiftResources.NibReference<ItemPhotoCell> { .init(name: "ItemPhotoCell", bundle: bundle) }
+
+    /// Nib `ItemPhotoCollectionViewCell`.
+    var itemPhotoCollectionViewCell: RswiftResources.NibReference<ItemPhotoCollectionViewCell> { .init(name: "ItemPhotoCollectionViewCell", bundle: bundle) }
 
     /// Nib `ItemPriceCell`.
     var itemPriceCell: RswiftResources.NibReference<ItemPriceCell> { .init(name: "ItemPriceCell", bundle: bundle) }
@@ -135,6 +138,7 @@ struct _R {
     var userIconCell: RswiftResources.NibReference<UserIconCell> { .init(name: "UserIconCell", bundle: bundle) }
 
     func validate() throws {
+      if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "camera.fill") == nil { throw RswiftResources.ValidationError("[R.swift] System image named 'camera.fill' is used in nib 'ItemPhotoCollectionViewCell', but couldn't be loaded.") } }
       if UIKit.UIImage(named: "pants1", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'pants1' is used in nib 'ListedItemCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "shoes1", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'shoes1' is used in nib 'ListedItemCell', but couldn't be loaded.") }
       if UIKit.UIImage(named: "shoes2", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'shoes2' is used in nib 'ListedItemCell', but couldn't be loaded.") }
