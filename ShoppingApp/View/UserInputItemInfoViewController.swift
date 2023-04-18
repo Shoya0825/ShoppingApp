@@ -17,9 +17,9 @@ class UserInputItemInfoViewController: UITableViewController, UIImagePickerContr
         infoTableView.delegate = self
         
         
-        tableView.register(UINib(nibName: "ItemPhotoCell", bundle: nil), forCellReuseIdentifier: "ItemPhotoCell")
-        tableView.register(UINib(nibName: "ItemMainInfoCell", bundle: nil), forCellReuseIdentifier: "ItemMainInfoCell")
-        tableView.register(UINib(nibName: "ItemPriceCell", bundle: nil), forCellReuseIdentifier: "ItemPriceCell")
+        infoTableView.register(UINib(nibName: "ItemPhotoCell", bundle: nil), forCellReuseIdentifier: "ItemPhotoCell")
+        infoTableView.register(UINib(nibName: "ItemMainInfoCell", bundle: nil), forCellReuseIdentifier: "ItemMainInfoCell")
+        infoTableView.register(UINib(nibName: "ItemPriceCell", bundle: nil), forCellReuseIdentifier: "ItemPriceCell")
         
     }
     
@@ -74,7 +74,6 @@ class UserInputItemInfoViewController: UITableViewController, UIImagePickerContr
         return false
     }
     
-    
     func didTappedItemPhotoCell(_ itemPhotoCell: ItemPhotoCell) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .camera
@@ -84,8 +83,14 @@ class UserInputItemInfoViewController: UITableViewController, UIImagePickerContr
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print("呼ばれた")
+        guard let image = info[.originalImage] as? UIImage else { return }
+
+        dismiss(animated: true)
         
-        picker.dismiss(animated: true)
+        NotificationCenter.default.post(name: .notificationName, object: nil, userInfo: ["itemPhoto": image])
     }
+    
+}
+extension Notification.Name {
+    static let notificationName = Notification.Name("notificationName")
 }

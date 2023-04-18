@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58F-Zk-4qI" customClass="DesignableImageView" customModule="ShoppingApp" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58F-Zk-4qI" customClass="DesignableImageView" customModule="ShoppingApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ako-nF-ZZY" firstAttribute="centerY" secondItem="bls-63-1eo" secondAttribute="centerY" id="4YQ-BK-DBU"/>
                             <constraint firstAttribute="width" constant="20" id="FBc-I6-xCa"/>
@@ -62,20 +62,26 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GN-6c-Q8T">
                                 <rect key="frame" x="6.6666666666666661" y="25.000000000000004" width="26.666666666666671" height="15.666666666666668"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemCyanColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="tintColor" systemColor="systemCyanColor"/>
                         <constraints>
-                            <constraint firstItem="3GN-6c-Q8T" firstAttribute="top" secondItem="Ctp-eP-2U8" secondAttribute="bottom" id="3Ks-aG-x0E"/>
-                            <constraint firstItem="Ctp-eP-2U8" firstAttribute="centerX" secondItem="cJs-2O-fw6" secondAttribute="centerX" id="7Oi-ef-dHH"/>
                             <constraint firstAttribute="width" constant="40" id="7mT-UW-npc"/>
+                            <constraint firstItem="Ctp-eP-2U8" firstAttribute="centerX" secondItem="cJs-2O-fw6" secondAttribute="centerX" id="FgL-QF-eTu"/>
                             <constraint firstItem="3GN-6c-Q8T" firstAttribute="top" secondItem="Ctp-eP-2U8" secondAttribute="bottom" id="LOJ-Q0-u4w"/>
                             <constraint firstItem="Ctp-eP-2U8" firstAttribute="top" secondItem="cJs-2O-fw6" secondAttribute="top" id="bgJ-Dl-403"/>
                             <constraint firstItem="3GN-6c-Q8T" firstAttribute="centerX" secondItem="cJs-2O-fw6" secondAttribute="centerX" id="pef-M0-Wu4"/>
                             <constraint firstAttribute="height" constant="40" id="uns-AZ-8DR"/>
+                            <constraint firstItem="Ctp-eP-2U8" firstAttribute="centerY" secondItem="cJs-2O-fw6" secondAttribute="centerY" id="uzU-5g-dgQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="uzU-5g-dgQ"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
             </view>
@@ -89,19 +95,21 @@
             <size key="customSize" width="200" height="163"/>
             <connections>
                 <outlet property="cameraButtonView" destination="cJs-2O-fw6" id="Qeq-GM-NGd"/>
+                <outlet property="cameraImageView" destination="Ctp-eP-2U8" id="3fv-bA-z7I"/>
+                <outlet property="cameraImageViewBottomConst" destination="LOJ-Q0-u4w" id="OPO-dg-aMj"/>
+                <outlet property="cameraImageViewCenterYConst" destination="uzU-5g-dgQ" id="uyb-UW-GDV"/>
+                <outlet property="cameraImageViewTopConst" destination="bgJ-Dl-403" id="5MG-bS-h9l"/>
                 <outlet property="itemPhotoCountLabel" destination="ako-nF-ZZY" id="HqE-SJ-pD8"/>
-                <outlet property="itemPhotoImageView" destination="58F-Zk-4qI" id="mge-7P-CqF"/>
+                <outlet property="itemPhotoImageView" destination="58F-Zk-4qI" id="ozH-ae-7wT"/>
+                <outlet property="requiredLabel" destination="3GN-6c-Q8T" id="fNH-JX-ZJc"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="28.52112676056338"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

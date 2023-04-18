@@ -14,8 +14,11 @@ class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UIColl
     var delegate: ItemPhotoCellDelegate?
     
     let alert = AlertController()
-    var itemPhotoImage: UIImage?
     
+    var firstPhoto: UIImage?
+    var itemPhotoList: [UIImage?] = []
+    
+    var didTappedIndexPathRow: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +27,8 @@ class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UIColl
         itemPhotoCollectionView.dataSource = self
         
         itemPhotoCollectionView.register(UINib(nibName: "ItemPhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemPhotoCollectionViewCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotificationFromVC), name: .notificationName, object: nil)
     }
     
     enum ItemPhotoCell: Int, CaseIterable {
@@ -44,12 +49,7 @@ class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemPhotoCollectionViewCell", for: indexPath) as! ItemPhotoCollectionViewCell
         
-        cell.itemPhotoCountLabel.text = String(indexPath.row + 1)
-        
-        if indexPath.row == 0 {
-            cell.cameraButtonView.isHidden = false
-        }
-        cell.itemPhotoImageView.image = itemPhotoImage
+        setupItemPhotoListView(cell: cell, indexPath: indexPath)
         
         return cell
     }
@@ -62,9 +62,10 @@ class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.row <= itemPhotoList.count {
             checkCameraAuthorization { authorized in
                 if authorized {
+                    self.didTappedIndexPathRow = indexPath.row
                     self.delegate?.didTappedItemPhotoCell(self)
                 } else {
                     self.alert.showCameraPermissionAlert()
@@ -94,12 +95,49 @@ class ItemPhotoCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UIColl
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.originalImage] as? UIImage else { return }
+    private func setupItemPhotoListView(cell: ItemPhotoCollectionViewCell, indexPath: IndexPath) {
+        cell.itemPhotoCountLabel.text = String(indexPath.row + 1)
         
-        itemPhotoImage = image
+        if itemPhotoList.count == (indexPath.row) + 1 {
+            cell.itemPhotoImage = itemPhotoList[indexPath.row]
+        }
+        
+        // 2枚目以降のImageViewの設定
+        if indexPath.row == 0 {
+            cell.cameraButtonView.isHidden = cell.itemPhotoImage != nil
+            
+        } else {
+            if itemPhotoList.count == indexPath.row {
+                cell.cameraButtonView.isHidden = false
+                cell.requiredLabel.isHidden = true
+                cell.cameraImageView.tintColor = UIColor.systemGray
+                cell.cameraImageViewTopConst.isActive = false
+                cell.cameraImageViewTopConst.isActive = false
+                cell.cameraImageViewCenterYConst.isActive = true
+            }
+        }
+    }
+    
+    // カメラで写真撮影時にnotificationと画像を受け取る
+    @objc private func didGetNotificationFromVC(notification: NSNotification?) {
+        guard let imageData = notification?.userInfo!["itemPhoto"] as? UIImage else { return }
+        
+        
+        // 想定通りの順番に画像データが入らない
+        if itemPhotoList.count == 0 {
+            itemPhotoList.append(imageData)
+            
+        } else {
+            
+            if itemPhotoList.count == didTappedIndexPathRow {
+                itemPhotoList.append(imageData)
+                
+            } else {
+                itemPhotoList[didTappedIndexPathRow!] = imageData
+            }
+        }
+        
         itemPhotoCollectionView.reloadData()
-        picker.dismiss(animated: true)
     }
 }
 

@@ -60,6 +60,7 @@
 		E8C6BF9E29E3D955009E8C08 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6BF9D29E3D955009E8C08 /* UIImageView+Extension.swift */; };
 		E8DAD56C29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DAD56A29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift */; };
 		E8DAD56D29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8DAD56B29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib */; };
+		E8E27F9129EE8B1400E8A65C /* ExhibtItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E27F9029EE8B1400E8A65C /* ExhibtItemData.swift */; };
 		E8E33BB029CBFEC700CF1296 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E33BAF29CBFEC700CF1296 /* AlertController.swift */; };
 		E8E33BB229CC493500CF1296 /* RegistrationBirthday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E33BB129CC493500CF1296 /* RegistrationBirthday.storyboard */; };
 		E8E33BB429CC497200CF1296 /* RegistrationBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E33BB329CC497200CF1296 /* RegistrationBirthdayViewController.swift */; };
@@ -123,6 +124,7 @@
 		E8C6BF9D29E3D955009E8C08 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		E8DAD56A29E0014C008FEE58 /* ItemPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		E8DAD56B29E0014C008FEE58 /* ItemPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		E8E27F9029EE8B1400E8A65C /* ExhibtItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibtItemData.swift; sourceTree = "<group>"; };
 		E8E33BAF29CBFEC700CF1296 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		E8E33BB129CC493500CF1296 /* RegistrationBirthday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationBirthday.storyboard; sourceTree = "<group>"; };
 		E8E33BB329CC497200CF1296 /* RegistrationBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationBirthdayViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				E8438D3E29D2EA6E00077914 /* UserData.swift */,
+				E8E27F9029EE8B1400E8A65C /* ExhibtItemData.swift */,
 				E86F110129D28E870053D63B /* Validator.swift */,
 				E8E33BAF29CBFEC700CF1296 /* AlertController.swift */,
 			);
@@ -502,6 +505,7 @@
 				E8BD44D129B9BE5800BF0D25 /* SceneDelegate.swift in Sources */,
 				E8C6BF9E29E3D955009E8C08 /* UIImageView+Extension.swift in Sources */,
 				E81B6D0929BB2E6D008AB17F /* UserIconCell.swift in Sources */,
+				E8E27F9129EE8B1400E8A65C /* ExhibtItemData.swift in Sources */,
 				E8BD44E729B9C8B500BF0D25 /* RegistrationNameViewController.swift in Sources */,
 				E86F110229D28E870053D63B /* Validator.swift in Sources */,
 				E81B6CFD29BB1132008AB17F /* RegistrationAddressViewController.swift in Sources */,
